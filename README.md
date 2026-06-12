@@ -6,7 +6,7 @@ Local-first Latin study dictionary CLI for translating words and short phrases w
 
 - Offline-first CLI workflow
 - Dictionary-first translation pipeline
-- Planned adapters for Whitaker and Lewis & Short
+- Whitaker and Lewis & Short adapters with local JSON override support
 - Optional CLTK sentence analysis and `llama-cpp-python` synthesis
 
 ## Installation
@@ -43,6 +43,13 @@ Request JSON output:
 uv run lemora translate "amo" --format json
 ```
 
+Optional lexicon overrides (JSON arrays of entries with `lemma`, `gloss`, and optional `forms`, `confidence`, `morphology`):
+
+```bash
+export LEMORA_WHITAKER_PATH=/path/to/whitaker.json
+export LEMORA_LEWIS_SHORT_PATH=/path/to/lewis_short.json
+```
+
 ## Development
 
 ```bash
@@ -59,4 +66,3 @@ This repository is scaffolded for the first implementation phase:
 - Core data models
 - Adapter interfaces for dictionary, NLP, and LLM integrations
 - Service orchestration shell for dictionary-first translation
-

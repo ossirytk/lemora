@@ -52,7 +52,10 @@ def run(argv: Sequence[str] | None = None) -> int:
 
     config = LemoraConfig.from_env()
     service = LemoraService(
-        dictionaries=[WhitakerAdapter(), LewisShortAdapter()],
+        dictionaries=[
+            WhitakerAdapter(config.whitaker_path),
+            LewisShortAdapter(config.lewis_short_path),
+        ],
         analyzer=CltkAnalyzer(),
         synthesizer=LlamaSynthesizer(config.model_path),
     )
