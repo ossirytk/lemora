@@ -38,14 +38,43 @@ class LemoraService:
 
     def _lookup(self, normalized_query: str) -> list[DictionarySense]:
         collected: list[DictionarySense] = []
-        for adapter in self.dictionaries:
-            collected.extend(adapter.lookup(normalized_query))
+        for lookup_query in _lookup_variants(normalized_query):
+            for adapter in self.dictionaries:
+                collected.extend(adapter.lookup(lookup_query))
         merged = _merge_senses(collected)
         return _rank_senses(merged)
 
 
 def _normalize_query(query: str) -> str:
     return " ".join(query.split()).strip().lower()
+
+
+def _lookup_variants(normalized_query: str) -> tuple[str, ...]:
+    variants: list[str] = []
+    variants.extend(_token_variants(normalized_query))
+
+    # Preserve order while removing duplicates.
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for variant in variants:
+        if variant in seen:
+            continue
+        seen.add(variant)
+        ordered.append(variant)
+    return tuple(ordered)
+
+
+def _token_variants(normalized_query: str) -> list[str]:
+    enclitic = "que"
+    variants = [normalized_query]
+    tokens = normalized_query.split()
+    variants.extend(tokens)
+
+    # Whitaker/L&S forms often appear without enclitic -que.
+    variants.extend(
+        token[: -len(enclitic)] for token in tokens if token.endswith(enclitic) and len(token) > len(enclitic)
+    )
+    return variants
 
 
 def _merge_senses(senses: list[DictionarySense]) -> list[DictionarySense]:

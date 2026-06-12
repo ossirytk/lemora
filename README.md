@@ -43,12 +43,15 @@ Request JSON output:
 uv run lemora translate "amo" --format json
 ```
 
-Optional lexicon overrides (JSON arrays of entries with `lemma`, `gloss`, and optional `forms`, `confidence`, `morphology`):
+Optional lexicon overrides:
 
 ```bash
 export LEMORA_WHITAKER_PATH=/path/to/whitaker.json
 export LEMORA_LEWIS_SHORT_PATH=/path/to/lewis_short.json
 ```
+
+- Whitaker override expects JSON array entries with `lemma`, `gloss`, and optional `forms`, `confidence`, `morphology`.
+- Lewis & Short override accepts the same JSON format **or** Perseus `lat.ls.perseus-eng*.xml` TEI files.
 
 ## Development
 

@@ -6,10 +6,12 @@ from lemora.service import LemoraService
 
 
 def test_translate_normalizes_query() -> None:
-    service = LemoraService(dictionaries=[WhitakerAdapter()])
+    service = LemoraService(dictionaries=[WhitakerAdapter(), LewisShortAdapter()])
     result = service.translate("  ArMa   VirumQue ")
     assert result.normalized_query == "arma virumque"
-    assert result.senses == ()
+    lemmas = {sense.lemma for sense in result.senses}
+    assert "vir" in lemmas
+    assert "arma" in lemmas
 
 
 def test_translate_merges_duplicate_senses_from_sources() -> None:
@@ -54,6 +56,12 @@ def test_translate_ranking_prefers_lewis_short_at_equal_confidence() -> None:
     service = LemoraService(dictionaries=[WhitakerAdapter(), LewisShortAdapter()])
     result = service.translate("virum")
     assert result.senses[0].source.startswith("Lewis & Short")
+
+
+def test_translate_strips_enclitic_que_for_token_lookup() -> None:
+    service = LemoraService(dictionaries=[WhitakerAdapter(), LewisShortAdapter()])
+    result = service.translate("virumque")
+    assert all(sense.lemma == "vir" for sense in result.senses)
 
 
 class _StubDictionary(DictionaryAdapter):
