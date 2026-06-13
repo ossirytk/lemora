@@ -23,6 +23,12 @@ With CLTK:
 uv sync --group dev --extra nlp
 ```
 
+For full CLTK parsing, download Latin Stanza assets once:
+
+```bash
+uv run python -c "import stanza; stanza.download('la')"
+```
+
 With local LLM support:
 
 ```bash

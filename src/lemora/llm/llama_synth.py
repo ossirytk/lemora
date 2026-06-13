@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-import re
 from typing import TYPE_CHECKING
+
+from lemora.gloss import concise_gloss, normalize_space, readability_score
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -25,9 +26,9 @@ class LlamaSynthesizer:
             return f"No grounded synthesis available for: {query}"
 
         selected = _pick_phrase_senses(query, senses)
-        phrase = "; ".join(f"{sense.lemma}: {_concise_gloss(sense.gloss)}" for sense in selected)
+        phrase = "; ".join(_component_line(index, sense) for index, sense in enumerate(selected))
         sources = ", ".join(sorted({sense.source for sense in selected}))
-        return f"{query} -> {phrase} (grounded in {sources})"
+        return f"{query} -> components: {phrase} (grounded in {sources})"
 
 
 def _pick_phrase_senses(query: str, senses: list[DictionarySense]) -> list[DictionarySense]:
@@ -59,47 +60,27 @@ def _group_by_lemma(senses: list[DictionarySense]) -> dict[str, list[DictionaryS
 
 
 def _best_readable_sense(senses: list[DictionarySense]) -> DictionarySense:
-    return max(senses, key=lambda sense: (_readability_score(sense.gloss), sense.confidence))
+    return max(senses, key=lambda sense: (readability_score(sense.gloss), sense.confidence))
 
 
-def _readability_score(gloss: str) -> float:
-    cleaned = _normalize_space(gloss).lower()
-    score = 0.0
-
-    if re.search(r"\b(to|a|an|the|of|for|with|from)\b", cleaned):
-        score += 2.0
-
-    penalties = (
-        (r"\b(ap|ib|cf|inscr|naev|plaut|cic|verg|lucil)\.", 0.8),
-        (r"\d", 0.2),
-    )
-    for pattern, weight in penalties:
-        score -= len(re.findall(pattern, cleaned)) * weight
-
-    max_readable_len = 140
-    if len(cleaned) > max_readable_len:
-        score -= 1.0
-
-    return score
+def _component_line(index: int, sense: DictionarySense) -> str:
+    gloss = concise_gloss(sense.gloss, max_length=120)
+    role = _infer_role(index, gloss)
+    return f"{role}: {sense.lemma} = {gloss}"
 
 
-def _concise_gloss(gloss: str) -> str:
-    cleaned = _normalize_space(gloss)
-    cleaned = cleaned.replace(" .", ".")
-    split_pattern = r";|\s[—-]\s|(?<=\w)\.\s+(?=[A-Z])"
-    fragments = [part.strip(" .,:;-") for part in re.split(split_pattern, cleaned) if part.strip() != ""]
-    if not fragments:
-        return cleaned
-
-    best = max(fragments, key=_readability_score)
-    best = re.sub(r"\s+", " ", best).strip(" .,:;-")
-    max_gloss_length = 120
-    return best[:max_gloss_length] if len(best) > max_gloss_length else best
+def _infer_role(index: int, gloss: str) -> str:
+    normalized = normalize_space(gloss).lower()
+    if normalized.startswith("dative/ablative of "):
+        return "addressee"
+    if normalized.startswith(("dative/", "ablative/", "genitive/", "nominative/", "accusative/", "vocative/")):
+        return "case form"
+    if normalized.startswith(("to ", "imperative of ", "infinitive")):
+        return "verb"
+    if "accusative of " in normalized:
+        return "direct object"
+    return "term" if index > 0 else "head term"
 
 
 def _normalize(text: str) -> str:
-    return _normalize_space(text).lower()
-
-
-def _normalize_space(text: str) -> str:
-    return " ".join(text.split()).strip()
+    return normalize_space(text).lower()

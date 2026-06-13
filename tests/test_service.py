@@ -1,7 +1,7 @@
 from lemora.adapters.base import DictionaryAdapter
 from lemora.adapters.lewis_short import LewisShortAdapter
 from lemora.adapters.whitaker import WhitakerAdapter
-from lemora.models import DictionarySense
+from lemora.models import DictionarySense, TokenAnalysis
 from lemora.service import LemoraService
 
 
@@ -64,6 +64,16 @@ def test_translate_strips_enclitic_que_for_token_lookup() -> None:
     assert all(sense.lemma == "vir" for sense in result.senses)
 
 
+def test_translate_uses_analyzer_lemma_candidates_for_lookup() -> None:
+    service = LemoraService(
+        dictionaries=[_StubQueryDictionary()],
+        analyzer=_StubAnalyzer([TokenAnalysis(token="dixi", lemma_candidates=("dico",))]),  # noqa: S106
+    )
+    result = service.translate("dixi")
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "dico"
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
@@ -72,3 +82,28 @@ class _StubDictionary(DictionaryAdapter):
     def lookup(self, query: str) -> list[DictionarySense]:
         _ = query
         return self._senses
+
+
+class _StubQueryDictionary(DictionaryAdapter):
+    source_name = "Stub"
+
+    def lookup(self, query: str) -> list[DictionarySense]:
+        if query == "dico":
+            return [
+                DictionarySense(
+                    lemma="dico",
+                    gloss="to say",
+                    source=self.source_name,
+                    confidence=0.7,
+                ),
+            ]
+        return []
+
+
+class _StubAnalyzer:
+    def __init__(self, analyses: list[TokenAnalysis]) -> None:
+        self._analyses = analyses
+
+    def analyze(self, text: str) -> list[TokenAnalysis]:
+        _ = text
+        return self._analyses

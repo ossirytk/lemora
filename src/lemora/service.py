@@ -9,7 +9,7 @@ from lemora.models import TranslationResult
 
 if TYPE_CHECKING:
     from lemora.adapters.base import DictionaryAdapter, SentenceAnalyzer, Synthesizer
-    from lemora.models import DictionarySense
+    from lemora.models import DictionarySense, TokenAnalysis
 
 
 @dataclass(slots=True)
@@ -24,7 +24,7 @@ class LemoraService:
         """Translate a query using dictionary adapters and optional synthesis."""
         normalized_query = _normalize_query(query)
         token_analysis = tuple(self.analyzer.analyze(normalized_query)) if self.analyzer is not None else ()
-        senses = tuple(self._lookup(normalized_query))
+        senses = tuple(self._lookup(normalized_query, token_analysis))
         synthesis = None
         if synthesize and self.synthesizer is not None:
             synthesis = self.synthesizer.synthesize(normalized_query, list(senses))
@@ -36,9 +36,9 @@ class LemoraService:
             synthesis=synthesis,
         )
 
-    def _lookup(self, normalized_query: str) -> list[DictionarySense]:
+    def _lookup(self, normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> list[DictionarySense]:
         collected: list[DictionarySense] = []
-        for lookup_query in _lookup_variants(normalized_query):
+        for lookup_query in _lookup_variants(normalized_query, token_analysis):
             for adapter in self.dictionaries:
                 collected.extend(adapter.lookup(lookup_query))
         merged = _merge_senses(collected)
@@ -49,9 +49,10 @@ def _normalize_query(query: str) -> str:
     return " ".join(query.split()).strip().lower()
 
 
-def _lookup_variants(normalized_query: str) -> tuple[str, ...]:
+def _lookup_variants(normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> tuple[str, ...]:
     variants: list[str] = []
     variants.extend(_token_variants(normalized_query))
+    variants.extend(_lemma_variants(token_analysis))
 
     # Preserve order while removing duplicates.
     seen: set[str] = set()
@@ -74,6 +75,13 @@ def _token_variants(normalized_query: str) -> list[str]:
     variants.extend(
         token[: -len(enclitic)] for token in tokens if token.endswith(enclitic) and len(token) > len(enclitic)
     )
+    return variants
+
+
+def _lemma_variants(token_analysis: tuple[TokenAnalysis, ...]) -> list[str]:
+    variants: list[str] = []
+    for token in token_analysis:
+        variants.extend(token.lemma_candidates)
     return variants
 
 

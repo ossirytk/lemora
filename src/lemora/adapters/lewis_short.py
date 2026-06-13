@@ -24,21 +24,17 @@ class LewisShortAdapter:
 
     def lookup(self, query: str) -> list[DictionarySense]:
         """Return dictionary senses for query."""
-        normalized_query = _normalize(query)
-        results: list[DictionarySense] = []
-        for entry in self._index.get(normalized_query, []):
-            if not entry.matches(normalized_query):
-                continue
-            results.append(
-                DictionarySense(
-                    lemma=entry.lemma,
-                    gloss=entry.gloss,
-                    source=self.source_name,
-                    confidence=entry.confidence_for_query(query, lemma_bonus=0.04),
-                    morphology=entry.morphology,
-                ),
+        normalized_query = _normalize_lookup_key(query)
+        return [
+            DictionarySense(
+                lemma=entry.lemma,
+                gloss=entry.gloss,
+                source=self.source_name,
+                confidence=entry.confidence_for_query(query, lemma_bonus=0.04),
+                morphology=entry.morphology,
             )
-        return results
+            for entry in self._index.get(normalized_query, [])
+        ]
 
 
 def _load_entries(lexicon_path: Path | None) -> tuple[LexiconEntry, ...]:
@@ -61,11 +57,12 @@ def _load_perseus_xml_entries(lexicon_path: Path) -> tuple[LexiconEntry, ...]:
 
         sense_text = _first_tag_text(body, "sense")
         fallback_text = _strip_markup(body)
-        gloss = _truncate_gloss(sense_text if sense_text != "" else fallback_text)
+        morphology = _first_tag_text(body, "pos") or None
+        gloss_source = sense_text if sense_text != "" else fallback_text
+        gloss = _truncate_gloss(_prioritize_definition(gloss_source, lemma=lemma, morphology=morphology))
         if gloss == "":
             continue
 
-        morphology = _first_tag_text(body, "pos") or None
         entries.append(
             LexiconEntry(
                 lemma=lemma,
@@ -89,13 +86,18 @@ def _first_tag_text(body: str, tag_name: str) -> str:
 def _build_query_index(entries: tuple[LexiconEntry, ...]) -> dict[str, list[LexiconEntry]]:
     index: dict[str, list[LexiconEntry]] = {}
     for entry in entries:
-        for lookup_key in {_normalize(entry.lemma), *(_normalize(form) for form in entry.forms)}:
+        for lookup_key in {_normalize_lookup_key(entry.lemma), *(_normalize_lookup_key(form) for form in entry.forms)}:
             index.setdefault(lookup_key, []).append(entry)
     return index
 
 
 def _normalize(text: str) -> str:
     return " ".join(text.split()).strip().lower()
+
+
+def _normalize_lookup_key(text: str) -> str:
+    normalized = _normalize(text)
+    return normalized.replace("j", "i")
 
 
 def _clean_text(text: str) -> str:
@@ -117,6 +119,38 @@ def _truncate_gloss(text: str) -> str:
     if len(cleaned) <= max_gloss_length:
         return cleaned
     return f"{cleaned[:max_gloss_length].rstrip()}..."
+
+
+def _prioritize_definition(text: str, *, lemma: str, morphology: str | None) -> str:
+    cleaned = _clean_text(text)
+    if cleaned == "":
+        return ""
+
+    anchor_positions: list[int] = []
+    if _is_probably_verb(lemma=lemma, morphology=morphology):
+        anchor_positions.extend(
+            match.start()
+            for match in re.finditer(r"\bto\s+(?!the\b|a\b|an\b)[a-z][a-z'-]+", cleaned, flags=re.IGNORECASE)
+        )
+
+    semantic_noun_pattern = r"\b(chance|luck|fate|fortune|memory|death|life|day|time)\b"
+    anchor_positions.extend(
+        match.start() for match in re.finditer(semantic_noun_pattern, cleaned, flags=re.IGNORECASE)
+    )
+
+    if not anchor_positions:
+        return cleaned
+
+    start = min(anchor_positions)
+    prioritized = cleaned[start:].strip(" ,.;:-")
+    return prioritized if prioritized != "" else cleaned
+
+
+def _is_probably_verb(*, lemma: str, morphology: str | None) -> bool:
+    if morphology is not None and re.search(r"\bv\.", morphology.lower()):
+        return True
+    normalized_lemma = _normalize_lookup_key(lemma)
+    return normalized_lemma.endswith(("o", "or", "ri"))
 
 
 _ENTRY_PATTERN = re.compile(
