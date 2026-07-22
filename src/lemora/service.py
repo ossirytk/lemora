@@ -41,13 +41,16 @@ class LemoraService:
     def _lookup(self, normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> list[DictionarySense]:
         collected: list[DictionarySense] = []
         for lookup_query, confidence_adjustment in _lookup_variants(normalized_query, token_analysis):
+            expected_pos = _expected_pos_for_variant(lookup_query, token_analysis)
             for adapter in self.dictionaries:
                 collected.extend(
                     type(sense)(
                         lemma=sense.lemma,
                         gloss=sense.gloss,
                         source=sense.source,
-                        confidence=_clamp_confidence(sense.confidence + confidence_adjustment),
+                        confidence=_clamp_confidence(
+                            sense.confidence + confidence_adjustment + _sense_pos_adjustment(sense, expected_pos),
+                        ),
                         morphology=sense.morphology,
                     )
                     for sense in adapter.lookup(lookup_query)
@@ -169,4 +172,83 @@ def _clamp_confidence(confidence: float) -> float:
 
 
 def _reference_lemma_variant(token: str) -> str | None:
-    return load_national_archives_grammar().pronoun_lemma_by_form.get(token)
+    grammar = load_national_archives_grammar()
+    return grammar.pronoun_lemma_by_form.get(token) or grammar.verb_lemma_by_form.get(token)
+
+
+def _expected_pos_for_variant(lookup_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> set[str]:
+    expected: set[str] = set()
+    enclitic = "que"
+    grammar = load_national_archives_grammar()
+    for token in token_analysis:
+        normalized_pos = _normalize_pos(token.pos)
+        if normalized_pos is None:
+            continue
+        token_variants = set(token.lemma_candidates)
+        token_variants.add(token.token)
+        if token.token.endswith(enclitic) and len(token.token) > len(enclitic):
+            token_variants.add(token.token[: -len(enclitic)])
+        pronoun_mapped = grammar.pronoun_lemma_by_form.get(token.token)
+        if pronoun_mapped is not None:
+            token_variants.add(pronoun_mapped)
+        verb_mapped = grammar.verb_lemma_by_form.get(token.token)
+        is_reference_verb_query = False
+        if verb_mapped is not None:
+            token_variants.add(verb_mapped)
+            if lookup_query == verb_mapped:
+                is_reference_verb_query = True
+                expected.add("verb")
+        if lookup_query in token_variants and not is_reference_verb_query:
+            expected.add(normalized_pos)
+    return expected
+
+
+def _sense_pos_adjustment(sense: DictionarySense, expected_pos: set[str]) -> float:
+    if not expected_pos:
+        return 0.0
+    sense_pos = _infer_sense_pos(sense)
+    if sense_pos is None:
+        return 0.0
+    return 0.04 if sense_pos in expected_pos else -0.08
+
+
+def _infer_sense_pos(sense: DictionarySense) -> str | None:
+    morphology = (sense.morphology or "").lower()
+    if morphology == "":
+        return None
+
+    if "v." in morphology or "verb" in morphology:
+        return "verb"
+    if "adj" in morphology:
+        return "adjective"
+    if "adv" in morphology:
+        return "adverb"
+    if "prep" in morphology:
+        return "preposition"
+    if "pron" in morphology:
+        return "pronoun"
+    if "conj" in morphology:
+        return "conjunction"
+    if "noun" in morphology or "n." in morphology:
+        return "noun"
+    return None
+
+
+def _normalize_pos(pos: str | None) -> str | None:
+    if pos is None:
+        return None
+    mapping = {
+        "verb": "verb",
+        "aux": "verb",
+        "noun": "noun",
+        "propn": "noun",
+        "adj": "adjective",
+        "adv": "adverb",
+        "adp": "preposition",
+        "pron": "pronoun",
+        "det": "pronoun",
+        "cconj": "conjunction",
+        "sconj": "conjunction",
+        "conj": "conjunction",
+    }
+    return mapping.get(pos.lower())

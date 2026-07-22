@@ -91,6 +91,44 @@ def test_translate_maps_pronoun_forms_to_reference_lemmas() -> None:
     assert "qui" in lemmas
 
 
+def test_translate_maps_reference_verb_forms_to_lemmas() -> None:
+    service = LemoraService(dictionaries=[_StubQueryDictionary()])
+    result = service.translate("veni vidi vici")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert "venio" in lemmas
+    assert "video" in lemmas
+    assert "vinco" in lemmas
+
+
+def test_translate_prefers_senses_matching_token_pos() -> None:
+    service = LemoraService(
+        dictionaries=[
+            _StubDictionary(
+                source_name="Lewis & Short",
+                senses=[
+                    DictionarySense(
+                        lemma="vici",
+                        gloss="a village street",
+                        source="Lewis & Short",
+                        confidence=0.75,
+                        morphology="n.",
+                    ),
+                    DictionarySense(
+                        lemma="vinco",
+                        gloss="to conquer",
+                        source="Lewis & Short",
+                        confidence=0.75,
+                        morphology="v. a.",
+                    ),
+                ],
+            ),
+        ],
+        analyzer=_StubAnalyzer([TokenAnalysis(token="vici", lemma_candidates=("vinco",), pos="VERB")]),
+    )
+    result = service.translate("vici")
+    assert result.senses[0].lemma == "vinco"
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
@@ -137,6 +175,33 @@ class _StubQueryDictionary(DictionaryAdapter):
                 DictionarySense(
                     lemma="qui",
                     gloss="who / which",
+                    source=self.source_name,
+                    confidence=0.66,
+                ),
+            ]
+        if query == "venio":
+            return [
+                DictionarySense(
+                    lemma="venio",
+                    gloss="to come",
+                    source=self.source_name,
+                    confidence=0.66,
+                ),
+            ]
+        if query == "video":
+            return [
+                DictionarySense(
+                    lemma="video",
+                    gloss="to see",
+                    source=self.source_name,
+                    confidence=0.66,
+                ),
+            ]
+        if query == "vinco":
+            return [
+                DictionarySense(
+                    lemma="vinco",
+                    gloss="to conquer",
                     source=self.source_name,
                     confidence=0.66,
                 ),

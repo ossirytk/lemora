@@ -94,6 +94,16 @@
     "istarum": "iste",
     "istis": "iste"
   },
+  "verb_lemma_by_form": {
+    "veni": "venio",
+    "vidi": "video",
+    "vici": "vinco",
+    "fui": "sum",
+    "est": "sum",
+    "sunt": "sum",
+    "erat": "sum",
+    "erant": "sum"
+  },
   "case_name_by_abbrev": {
     "nom": "nominative",
     "gen": "genitive",
@@ -122,4 +132,3 @@
     "pron": "pronoun"
   }
 }
-

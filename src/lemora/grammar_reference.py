@@ -13,6 +13,7 @@ class NationalArchivesGrammar:
     """Curated subset of Stage 1/2 grammar resources used by lemora."""
 
     pronoun_lemma_by_form: dict[str, str]
+    verb_lemma_by_form: dict[str, str]
     case_name_by_abbrev: dict[str, str]
     grammar_abbrev_expansions: dict[str, str]
 
@@ -25,9 +26,9 @@ def load_national_archives_grammar() -> NationalArchivesGrammar:
     )
     return NationalArchivesGrammar(
         pronoun_lemma_by_form={str(key): str(value) for key, value in payload["pronoun_lemma_by_form"].items()},
+        verb_lemma_by_form={str(key): str(value) for key, value in payload["verb_lemma_by_form"].items()},
         case_name_by_abbrev={str(key): str(value) for key, value in payload["case_name_by_abbrev"].items()},
         grammar_abbrev_expansions={
             str(key): str(value) for key, value in payload["grammar_abbrev_expansions"].items()
         },
     )
-

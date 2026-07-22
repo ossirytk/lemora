@@ -12,3 +12,7 @@ def test_load_national_archives_grammar_contains_grammar_labels() -> None:
     assert grammar.case_name_by_abbrev["dat"] == "dative"
     assert grammar.grammar_abbrev_expansions["adj"] == "adjective"
 
+
+def test_load_national_archives_grammar_contains_verb_forms() -> None:
+    grammar = load_national_archives_grammar()
+    assert grammar.verb_lemma_by_form["vici"] == "vinco"
