@@ -83,6 +83,7 @@ def _token_variants(normalized_query: str) -> list[str]:
     variants = [normalized_query]
     tokens = normalized_query.split()
     variants.extend(tokens)
+    variants.extend(_reference_lemma_variant(token) for token in tokens if _reference_lemma_variant(token) is not None)
 
     # Whitaker/L&S forms often appear without enclitic -que.
     variants.extend(
@@ -161,3 +162,113 @@ def _normalize_token(token: str) -> str:
 
 def _clamp_confidence(confidence: float) -> float:
     return max(0.0, min(1.0, confidence))
+
+
+def _reference_lemma_variant(token: str) -> str | None:
+    return _PRONOUN_LEMMA_BY_FORM.get(token)
+
+
+_PRONOUN_LEMMA_BY_FORM = {
+    # Personal pronouns (National Archives stage grammar tables)
+    "me": "ego",
+    "mei": "ego",
+    "mihi": "ego",
+    "te": "tu",
+    "tui": "tu",
+    "tibi": "tu",
+    "nostri": "nos",
+    "nostrum": "nos",
+    "nobis": "nos",
+    "vestri": "vos",
+    "vestrum": "vos",
+    "vobis": "vos",
+    # Reflexive
+    "sese": "se",
+    "sui": "se",
+    "sibi": "se",
+    # Demonstrative: is, ea, id
+    "eius": "is",
+    "ei": "is",
+    "eis": "is",
+    "iis": "is",
+    "eorum": "is",
+    "earum": "is",
+    # Demonstrative: hic, haec, hoc
+    "hec": "hic",
+    "haec": "hic",
+    "hunc": "hic",
+    "hanc": "hic",
+    "huius": "hic",
+    "huic": "hic",
+    "hoc": "hic",
+    "hac": "hic",
+    "hi": "hic",
+    "he": "hic",
+    "hos": "hic",
+    "has": "hic",
+    "horum": "hic",
+    "harum": "hic",
+    "his": "hic",
+    "hiis": "hic",
+    # Demonstrative: ille, illa, illud
+    "illum": "ille",
+    "illam": "ille",
+    "illius": "ille",
+    "illi": "ille",
+    "illo": "ille",
+    "illi": "ille",
+    "illos": "ille",
+    "illas": "ille",
+    "illorum": "ille",
+    "illis": "ille",
+    # Relative/interrogative: qui, quae, quod
+    "quae": "qui",
+    "quem": "qui",
+    "quam": "qui",
+    "cuius": "qui",
+    "cui": "qui",
+    "quo": "qui",
+    "quos": "qui",
+    "quas": "qui",
+    "quorum": "qui",
+    "quarum": "qui",
+    "quibus": "qui",
+    # Idem
+    "eadem": "idem",
+    "eundem": "idem",
+    "eandem": "idem",
+    "eiusdem": "idem",
+    "eidem": "idem",
+    "eodem": "idem",
+    "iidem": "idem",
+    "eaedem": "idem",
+    "eedem": "idem",
+    "eosdem": "idem",
+    "easdem": "idem",
+    "eorundem": "idem",
+    "earumdem": "idem",
+    "eisdem": "idem",
+    "iisdem": "idem",
+    # Ipse
+    "ipsam": "ipse",
+    "ipsius": "ipse",
+    "ipsi": "ipse",
+    "ipso": "ipse",
+    "ipsos": "ipse",
+    "ipsas": "ipse",
+    "ipsorum": "ipse",
+    "ipsarum": "ipse",
+    "ipsis": "ipse",
+    # Iste
+    "ista": "iste",
+    "istum": "iste",
+    "istam": "iste",
+    "istius": "iste",
+    "isti": "iste",
+    "isto": "iste",
+    "istos": "iste",
+    "istas": "iste",
+    "istorum": "iste",
+    "istarum": "iste",
+    "istis": "iste",
+}

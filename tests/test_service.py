@@ -83,6 +83,14 @@ def test_translate_normalizes_tokens_with_trailing_punctuation() -> None:
     assert result.senses[0].lemma == "amor"
 
 
+def test_translate_maps_pronoun_forms_to_reference_lemmas() -> None:
+    service = LemoraService(dictionaries=[_StubQueryDictionary()])
+    result = service.translate("eius cuius")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert "is" in lemmas
+    assert "qui" in lemmas
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
@@ -113,6 +121,24 @@ class _StubQueryDictionary(DictionaryAdapter):
                     gloss="love",
                     source=self.source_name,
                     confidence=0.7,
+                ),
+            ]
+        if query == "is":
+            return [
+                DictionarySense(
+                    lemma="is",
+                    gloss="he / she / it; that",
+                    source=self.source_name,
+                    confidence=0.66,
+                ),
+            ]
+        if query == "qui":
+            return [
+                DictionarySense(
+                    lemma="qui",
+                    gloss="who / which",
+                    source=self.source_name,
+                    confidence=0.66,
                 ),
             ]
         return []
