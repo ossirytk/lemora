@@ -42,6 +42,7 @@ def test_render_result_collapses_duplicate_lemmas() -> None:
     assert "Inscr. Orell. 4848" not in output
     assert "dative/ablative of vos" in output
     assert "plural" in output
+    assert "Source" not in output
 
 
 def test_render_result_humanizes_imperative_abbreviation() -> None:

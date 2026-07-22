@@ -27,8 +27,7 @@ class LlamaSynthesizer:
 
         selected = _pick_phrase_senses(query, senses)
         phrase = "; ".join(_component_line(index, sense) for index, sense in enumerate(selected))
-        sources = ", ".join(sorted({sense.source for sense in selected}))
-        return f"{query} -> components: {phrase} (grounded in {sources})"
+        return f"{query} -> components: {phrase}"
 
 
 def _pick_phrase_senses(query: str, senses: list[DictionarySense]) -> list[DictionarySense]:

@@ -30,15 +30,13 @@ def render_result(console: Console, result: TranslationResult, output_format: st
     table = Table(title=f"lemora: {result.query}")
     table.add_column("Lemma")
     table.add_column("Gloss")
-    table.add_column("Source")
     table.add_column("Confidence", justify="right")
 
     for sense, duplicate_count in display_senses:
         lemma_label = sense.lemma if duplicate_count == 1 else f"{sense.lemma} ({duplicate_count})"
         table.add_row(
             lemma_label,
-            concise_gloss(sense.gloss, max_length=96),
-            sense.source,
+            concise_gloss(sense.gloss, max_length=220),
             f"{sense.confidence:.2f}",
         )
 

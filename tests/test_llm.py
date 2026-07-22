@@ -50,6 +50,7 @@ def test_synthesize_includes_multiple_tokens(tmp_path) -> None:
     assert "verb: dico =" in synthesis.lower()
     assert "addressee: vobis =" in synthesis.lower()
     assert "dative/ablative of vos (you (plural))" in synthesis.lower()
+    assert "grounded in" not in synthesis.lower()
 
 
 def test_synthesize_humanizes_imperative_gloss(tmp_path) -> None:
