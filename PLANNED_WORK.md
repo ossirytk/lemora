@@ -1,11 +1,8 @@
 The confidence of a translation is always 83
 Translation for sentences does not translate all words
 Pronouns not always translated
-Glossary lines clip if the line is long
 "Amor"" gets translated to things like family for some reasons
-The sentence always ends in (grounded in Lewis & Short)
 Just make Lewis and the LLM default. Lewis is at ~/repos/lexica/. Could just be added as git submodule
-Just remove the source box
 Needs to properly translate all pronouns https://www.nationalarchives.gov.uk/latin/stage-2-latin/lessons/lesson-17-pronouns/
 
 For future consideration: Consider bringing in Vulgate as vector memory. The Vulgate bible has Latin passages with matching English translation. My project for Vulgate is at ~/repos/vulgate/

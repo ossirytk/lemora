@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
@@ -46,7 +47,8 @@ class LemoraService:
 
 
 def _normalize_query(query: str) -> str:
-    return " ".join(query.split()).strip().lower()
+    normalized_tokens = [_normalize_token(token) for token in query.split()]
+    return " ".join(token for token in normalized_tokens if token != "")
 
 
 def _lookup_variants(normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> tuple[str, ...]:
@@ -138,3 +140,9 @@ def _source_priority(source: str) -> int:
 def _source_bonus(source: str) -> float:
     bonuses = {"Lewis & Short": 0.06, "Whitaker": 0.03}
     return bonuses.get(source, 0.0)
+
+
+def _normalize_token(token: str) -> str:
+    lowered = token.strip().lower()
+    # Keep inner apostrophes/hyphens but drop leading/trailing punctuation and quotes.
+    return re.sub(r"^[^\w]+|[^\w]+$", "", lowered)

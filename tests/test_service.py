@@ -74,6 +74,14 @@ def test_translate_uses_analyzer_lemma_candidates_for_lookup() -> None:
     assert result.senses[0].lemma == "dico"
 
 
+def test_translate_normalizes_tokens_with_trailing_punctuation() -> None:
+    service = LemoraService(dictionaries=[_StubQueryDictionary()])
+    result = service.translate('Amor""')
+    assert result.normalized_query == "amor"
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "amor"
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
@@ -93,6 +101,15 @@ class _StubQueryDictionary(DictionaryAdapter):
                 DictionarySense(
                     lemma="dico",
                     gloss="to say",
+                    source=self.source_name,
+                    confidence=0.7,
+                ),
+            ]
+        if query == "amor":
+            return [
+                DictionarySense(
+                    lemma="amor",
+                    gloss="love",
                     source=self.source_name,
                     confidence=0.7,
                 ),

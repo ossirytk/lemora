@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from dataclasses import asdict
 from importlib import import_module
 from importlib.util import find_spec
@@ -108,7 +109,8 @@ def _clean_token(token: object) -> str:
         tag_value = getattr(token, "tag", None)
         raw = tag_value if isinstance(tag_value, str) else str(token)
 
-    return " ".join(raw.split()).strip().lower()
+    normalized = " ".join(raw.split()).strip().lower()
+    return re.sub(r"^[^\w]+|[^\w]+$", "", normalized)
 
 
 def _coerce_features(raw_features: object) -> dict[str, str]:

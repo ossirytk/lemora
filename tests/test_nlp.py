@@ -19,6 +19,10 @@ def test_clean_token_handles_tag_objects() -> None:
     assert _clean_token(_FakePosTag("VERB")) == "verb"
 
 
+def test_clean_token_strips_surrounding_punctuation() -> None:
+    assert _clean_token('""Amor...') == "amor"
+
+
 def test_coerce_features_handles_model_dump_payload() -> None:
     features = _coerce_features(
         _FakeFeatureSet(
