@@ -5,15 +5,10 @@ from __future__ import annotations
 import re
 import unicodedata
 
-_CASE_NAME_BY_ABBREV = {
-    "nom": "nominative",
-    "gen": "genitive",
-    "dat": "dative",
-    "acc": "accusative",
-    "abl": "ablative",
-    "voc": "vocative",
-    "loc": "locative",
-}
+from lemora.grammar_reference import load_national_archives_grammar
+
+_GRAMMAR_REFERENCE = load_national_archives_grammar()
+_CASE_NAME_BY_ABBREV = _GRAMMAR_REFERENCE.case_name_by_abbrev
 
 _PRONOUN_GLOSSES = {
     "ego": "I / me",
@@ -35,23 +30,9 @@ _PRONOUN_GLOSSES = {
     "sui": "of himself / herself / itself / themselves",
 }
 
-_GRAMMAR_ABBREV_REWRITES = (
-    (r"\bimper\.", "imperative"),
-    (r"\binf\.", "infinitive"),
-    (r"\bpart\.", "participle"),
-    (r"\bpres\.", "present"),
-    (r"\bperf\.", "perfect"),
-    (r"\bfut\.", "future"),
-    (r"\bsing\.", "singular"),
-    (r"\bplur\.", "plural"),
-    (r"\bmasc\.", "masculine"),
-    (r"\bfem\.", "feminine"),
-    (r"\bneut\.", "neuter"),
-    (r"\badj\.", "adjective"),
-    (r"\badv\.", "adverb"),
-    (r"\bprep\.", "preposition"),
-    (r"\bconj\.", "conjunction"),
-    (r"\bpron\.", "pronoun"),
+_GRAMMAR_ABBREV_REWRITES = tuple(
+    (rf"\b{re.escape(abbrev)}\.", expanded)
+    for abbrev, expanded in _GRAMMAR_REFERENCE.grammar_abbrev_expansions.items()
 )
 
 
