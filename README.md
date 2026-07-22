@@ -54,10 +54,12 @@ Optional lexicon overrides:
 ```bash
 export LEMORA_WHITAKER_PATH=/path/to/whitaker.json
 export LEMORA_LEWIS_SHORT_PATH=/path/to/lewis_short.json
+export LEMORA_MODEL_PATH=/path/to/model.gguf
 ```
 
 - Whitaker override expects JSON array entries with `lemma`, `gloss`, and optional `forms`, `confidence`, `morphology`.
 - Lewis & Short override accepts the same JSON format **or** Perseus `lat.ls.perseus-eng*.xml` TEI files.
+- `LEMORA_MODEL_PATH` is only for optional synthesis models (for `--synthesize` workflows).
 
 ## Development
 

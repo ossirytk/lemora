@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from json import JSONDecodeError
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -42,7 +43,20 @@ def load_lexicon_entries(
     """Load lexicon entries from JSON, or fallback to built-ins when not configured."""
     if asset_path is None:
         return fallback_entries
-    raw_payload = json.loads(asset_path.read_text(encoding="utf-8"))
+    try:
+        raw_payload = json.loads(asset_path.read_text(encoding="utf-8"))
+    except UnicodeDecodeError as exc:
+        msg = (
+            f"Invalid lexicon file at {asset_path}: expected UTF-8 JSON but file could not be decoded. "
+            "If this is your LLM model file, set it via LEMORA_MODEL_PATH instead."
+        )
+        raise ValueError(msg) from exc
+    except JSONDecodeError as exc:
+        msg = (
+            f"Invalid lexicon file at {asset_path}: expected JSON array entries with at least "
+            "'lemma' and 'gloss' keys."
+        )
+        raise ValueError(msg) from exc
     if not isinstance(raw_payload, list):
         msg = f"Expected list payload in lexicon JSON at {asset_path}"
         raise TypeError(msg)

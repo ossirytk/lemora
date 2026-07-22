@@ -11,6 +11,21 @@ def test_whitaker_lookup_matches_inflected_form() -> None:
     assert all(sense.source == "Whitaker" for sense in senses)
 
 
+def test_whitaker_reports_invalid_lexicon_encoding(tmp_path) -> None:
+    invalid_path = tmp_path / "model.gguf"
+    invalid_path.write_bytes(b'{"lemma":"amo","gloss":"love"}\x80')
+
+    try:
+        WhitakerAdapter(invalid_path)
+    except ValueError as exc:
+        message = str(exc)
+        assert "expected UTF-8 JSON" in message
+        assert "LEMORA_MODEL_PATH" in message
+    else:
+        msg = "Expected ValueError for invalid Whitaker lexicon encoding."
+        raise AssertionError(msg)
+
+
 def test_lewis_short_loads_configured_lexicon(tmp_path) -> None:
     payload = [
         {
