@@ -14,3 +14,13 @@ def test_concise_gloss_humanizes_imperative_pattern() -> None:
 def test_concise_gloss_expands_common_grammar_abbreviations() -> None:
     gloss = "adj. and adv. form"
     assert concise_gloss(gloss, max_length=96) == "adjective and adverb form"
+
+
+def test_concise_gloss_humanizes_demonstrative_pronoun_case_patterns() -> None:
+    gloss = "eī, dat. of is"
+    assert concise_gloss(gloss, max_length=96) == "dative of is (he / she / it; that)"
+
+
+def test_concise_gloss_humanizes_relative_pronoun_case_patterns() -> None:
+    gloss = "cuius, gen. of qui"
+    assert concise_gloss(gloss, max_length=96) == "genitive of qui (who / which)"

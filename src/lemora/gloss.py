@@ -20,6 +20,19 @@ _PRONOUN_GLOSSES = {
     "tu": "you (singular)",
     "nos": "we / us",
     "vos": "you (plural)",
+    "is": "he / she / it; that",
+    "hic": "this",
+    "ille": "that (over there); he/she/it",
+    "ipse": "self; very",
+    "idem": "same",
+    "qui": "who / which",
+    "quis": "who? / what?",
+    "aliquis": "someone / something",
+    "quisquam": "anyone / anything",
+    "nihil": "nothing",
+    "nemo": "no one",
+    "se": "himself / herself / itself / themselves",
+    "sui": "of himself / herself / itself / themselves",
 }
 
 _GRAMMAR_ABBREV_REWRITES = (
