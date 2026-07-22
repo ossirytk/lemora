@@ -1,7 +1,6 @@
 The confidence of a translation is always 83
 Translation for sentences does not translate all words
 Pronouns not always translated
-"Amor"" gets translated to things like family for some reasons
 Just make Lewis and the LLM default. Lewis is at ~/repos/lexica/. Could just be added as git submodule
 Needs to properly translate all pronouns https://www.nationalarchives.gov.uk/latin/stage-2-latin/lessons/lesson-17-pronouns/
 

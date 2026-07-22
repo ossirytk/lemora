@@ -39,9 +39,18 @@ class LemoraService:
 
     def _lookup(self, normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> list[DictionarySense]:
         collected: list[DictionarySense] = []
-        for lookup_query in _lookup_variants(normalized_query, token_analysis):
+        for lookup_query, confidence_adjustment in _lookup_variants(normalized_query, token_analysis):
             for adapter in self.dictionaries:
-                collected.extend(adapter.lookup(lookup_query))
+                collected.extend(
+                    type(sense)(
+                        lemma=sense.lemma,
+                        gloss=sense.gloss,
+                        source=sense.source,
+                        confidence=_clamp_confidence(sense.confidence + confidence_adjustment),
+                        morphology=sense.morphology,
+                    )
+                    for sense in adapter.lookup(lookup_query)
+                )
         merged = _merge_senses(collected)
         return _rank_senses(merged)
 
@@ -51,19 +60,21 @@ def _normalize_query(query: str) -> str:
     return " ".join(token for token in normalized_tokens if token != "")
 
 
-def _lookup_variants(normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> tuple[str, ...]:
-    variants: list[str] = []
-    variants.extend(_token_variants(normalized_query))
-    variants.extend(_lemma_variants(token_analysis))
+def _lookup_variants(
+    normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]
+) -> tuple[tuple[str, float], ...]:
+    variants: list[tuple[str, float]] = []
+    variants.extend((variant, 0.0) for variant in _token_variants(normalized_query))
+    variants.extend((variant, -0.08) for variant in _lemma_variants(token_analysis))
 
     # Preserve order while removing duplicates.
     seen: set[str] = set()
-    ordered: list[str] = []
-    for variant in variants:
+    ordered: list[tuple[str, float]] = []
+    for variant, confidence_adjustment in variants:
         if variant in seen:
             continue
         seen.add(variant)
-        ordered.append(variant)
+        ordered.append((variant, confidence_adjustment))
     return tuple(ordered)
 
 
@@ -146,3 +157,7 @@ def _normalize_token(token: str) -> str:
     lowered = token.strip().lower()
     # Keep inner apostrophes/hyphens but drop leading/trailing punctuation and quotes.
     return re.sub(r"^[^\w]+|[^\w]+$", "", lowered)
+
+
+def _clamp_confidence(confidence: float) -> float:
+    return max(0.0, min(1.0, confidence))

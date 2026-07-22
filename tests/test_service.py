@@ -72,6 +72,7 @@ def test_translate_uses_analyzer_lemma_candidates_for_lookup() -> None:
     result = service.translate("dixi")
     assert len(result.senses) == 1
     assert result.senses[0].lemma == "dico"
+    assert result.senses[0].confidence < 0.7
 
 
 def test_translate_normalizes_tokens_with_trailing_punctuation() -> None:
