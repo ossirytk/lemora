@@ -1,4 +1,3 @@
-The confidence of a translation is always 83
 Translation for sentences does not translate all words
 Pronouns not always translated
 Just make Lewis and the LLM default. Lewis is at ~/repos/lexica/. Could just be added as git submodule

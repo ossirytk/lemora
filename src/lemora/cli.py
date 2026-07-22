@@ -51,11 +51,12 @@ def run(argv: Sequence[str] | None = None) -> int:
         return 1
 
     config = LemoraConfig.from_env()
+    dictionaries = [LewisShortAdapter(config.lewis_short_path)]
+    if config.whitaker_path is not None:
+        dictionaries.append(WhitakerAdapter(config.whitaker_path))
+
     service = LemoraService(
-        dictionaries=[
-            WhitakerAdapter(config.whitaker_path),
-            LewisShortAdapter(config.lewis_short_path),
-        ],
+        dictionaries=dictionaries,
         analyzer=CltkAnalyzer(),
         synthesizer=LlamaSynthesizer(config.model_path),
     )
