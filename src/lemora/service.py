@@ -56,7 +56,8 @@ class LemoraService:
                     for sense in adapter.lookup(lookup_query)
                 )
         merged = _merge_senses(collected)
-        return _rank_senses(merged)
+        ranked = _rank_senses(merged)
+        return _limit_phrase_senses(ranked, token_analysis)
 
 
 def _normalize_query(query: str) -> str:
@@ -139,6 +140,12 @@ def _rank_senses(senses: list[DictionarySense]) -> list[DictionarySense]:
         senses,
         key=lambda sense: (-_score_sense(sense), _normalize_query(sense.lemma), _normalize_query(sense.gloss)),
     )
+
+
+def _limit_phrase_senses(senses: list[DictionarySense], token_analysis: tuple[TokenAnalysis, ...]) -> list[DictionarySense]:
+    if len(token_analysis) <= 1:
+        return senses
+    return senses[: len(token_analysis)]
 
 
 def _score_sense(sense: DictionarySense) -> float:

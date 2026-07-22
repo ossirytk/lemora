@@ -129,6 +129,33 @@ def test_translate_prefers_senses_matching_token_pos() -> None:
     assert result.senses[0].lemma == "vinco"
 
 
+def test_translate_limits_multi_token_phrase_noise() -> None:
+    service = LemoraService(
+        dictionaries=[
+            _StubDictionary(
+                source_name="Lewis & Short",
+                senses=[
+                    DictionarySense(lemma="venio", gloss="to come", source="Lewis & Short", confidence=0.87, morphology="v. a."),
+                    DictionarySense(lemma="video", gloss="to see", source="Lewis & Short", confidence=0.87, morphology="v. a."),
+                    DictionarySense(lemma="vinco", gloss="to conquer", source="Lewis & Short", confidence=0.87, morphology="v. a."),
+                    DictionarySense(lemma="vicus", gloss="village street", source="Lewis & Short", confidence=0.75, morphology="n."),
+                ],
+            ),
+        ],
+        analyzer=_StubAnalyzer(
+            [
+                TokenAnalysis(token="veni", lemma_candidates=("venio",), pos="VERB"),
+                TokenAnalysis(token="vidi", lemma_candidates=("video",), pos="VERB"),
+                TokenAnalysis(token="vici", lemma_candidates=("vinco",), pos="VERB"),
+            ],
+        ),
+    )
+    result = service.translate("Veni, vidi, vici")
+    lemmas = [sense.lemma for sense in result.senses]
+    assert lemmas == ["venio", "video", "vinco"]
+    assert "vicus" not in lemmas
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
