@@ -198,6 +198,7 @@ def test_translate_prefers_exact_reference_phrase_entry_for_remaining_quotes() -
         "Non ducor, duco": "non ducor duco",
         "Dum vita est, spes est": "dum vita est spes est",
         "Fons vitae caritas": "fons vitae caritas",
+        "Veni, vidi, vici": "veni vidi vici",
     }
 
     for query, expected_lemma in cases.items():

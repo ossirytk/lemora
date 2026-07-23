@@ -34,6 +34,7 @@
   {"lemma": "veritas", "forms": ["veritatis", "veritatem", "veritate", "veritates", "veritatum", "veritatibus"], "gloss": "truth", "confidence": 0.69, "morphology": "noun feminine"},
   {"lemma": "veritas liberabit vos", "forms": ["veritas liberabit vos"], "gloss": "the truth will set you free", "confidence": 0.97, "morphology": "phrase"},
   {"lemma": "dum vita est spes est", "forms": ["dum vita est spes est"], "gloss": "while there is life, there is hope", "confidence": 0.97, "morphology": "phrase"},
+  {"lemma": "veni vidi vici", "forms": ["veni vidi vici"], "gloss": "I came, I saw, I conquered", "confidence": 0.97, "morphology": "phrase"},
   {"lemma": "volo", "forms": ["vis", "vult", "volumus", "vultis", "volunt", "velle", "volo", "volui"], "gloss": "to want; wish", "confidence": 0.7, "morphology": "verb"},
   {"lemma": "vos", "forms": ["vobis", "vestri", "vestrum"], "gloss": "you (plural)", "confidence": 0.66, "morphology": "pronoun"}
 ]
