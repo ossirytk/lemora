@@ -8,6 +8,7 @@ Local-first Latin study dictionary CLI for translating words and short phrases w
 - Dictionary-first translation pipeline
 - Whitaker and Lewis & Short adapters with local JSON override support
 - Curated National Archives Stage 1/2 grammar reference for pronoun-form normalization
+- Bundled National Archives stage Latin reference lexicon for common school phrases
 - Optional CLTK sentence analysis and `llama-cpp-python` synthesis
 
 ## Installation

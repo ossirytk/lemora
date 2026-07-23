@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from rich.console import Console
 
 from lemora.adapters.lewis_short import LewisShortAdapter
+from lemora.adapters.national_archives_reference import NationalArchivesReferenceAdapter
 from lemora.adapters.whitaker import WhitakerAdapter
 from lemora.config import LemoraConfig
 from lemora.llm.llama_synth import LlamaSynthesizer
@@ -51,7 +52,10 @@ def run(argv: Sequence[str] | None = None) -> int:
         return 1
 
     config = LemoraConfig.from_env()
-    dictionaries = [LewisShortAdapter(config.lewis_short_path)]
+    dictionaries = [
+        LewisShortAdapter(config.lewis_short_path),
+        NationalArchivesReferenceAdapter(),
+    ]
     if config.whitaker_path is not None:
         dictionaries.append(WhitakerAdapter(config.whitaker_path))
 

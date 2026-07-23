@@ -1,5 +1,6 @@
 from lemora.adapters.base import DictionaryAdapter
 from lemora.adapters.lewis_short import LewisShortAdapter
+from lemora.adapters.national_archives_reference import NationalArchivesReferenceAdapter
 from lemora.adapters.whitaker import WhitakerAdapter
 from lemora.models import DictionarySense, TokenAnalysis
 from lemora.service import LemoraService
@@ -154,6 +155,13 @@ def test_translate_limits_multi_token_phrase_noise() -> None:
     lemmas = [sense.lemma for sense in result.senses]
     assert lemmas == ["venio", "video", "vinco"]
     assert "vicus" not in lemmas
+
+
+def test_reference_adapter_covers_common_school_latin_phrase() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("Veritas liberabit vos")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert {"veritas", "libero", "vos"} <= lemmas
 
 
 class _StubDictionary(DictionaryAdapter):
