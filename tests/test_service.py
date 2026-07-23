@@ -160,8 +160,17 @@ def test_translate_limits_multi_token_phrase_noise() -> None:
 def test_reference_adapter_covers_common_school_latin_phrase() -> None:
     service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
     result = service.translate("Veritas liberabit vos")
-    lemmas = {sense.lemma for sense in result.senses}
-    assert {"veritas", "libero", "vos"} <= lemmas
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "veritas liberabit vos"
+    assert "truth" in result.senses[0].gloss
+
+
+def test_translate_prefers_exact_reference_phrase_entry() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("Si vis pacem, para bellum")
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "si vis pacem para bellum"
+    assert "peace" in result.senses[0].gloss
 
 
 class _StubDictionary(DictionaryAdapter):

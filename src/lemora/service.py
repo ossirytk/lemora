@@ -57,6 +57,9 @@ class LemoraService:
                 )
         merged = _merge_senses(collected)
         ranked = _rank_senses(merged)
+        exact_phrase = _exact_phrase_senses(ranked, normalized_query)
+        if exact_phrase:
+            return exact_phrase
         return _limit_phrase_senses(ranked, token_analysis)
 
 
@@ -146,6 +149,15 @@ def _limit_phrase_senses(senses: list[DictionarySense], token_analysis: tuple[To
     if len(token_analysis) <= 1:
         return senses
     return senses[: len(token_analysis)]
+
+
+def _exact_phrase_senses(senses: list[DictionarySense], normalized_query: str) -> list[DictionarySense]:
+    if " " not in normalized_query:
+        return []
+    exact_matches = [sense for sense in senses if _normalize_query(sense.lemma) == normalized_query]
+    if not exact_matches:
+        return []
+    return exact_matches
 
 
 def _score_sense(sense: DictionarySense) -> float:
