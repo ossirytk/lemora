@@ -25,7 +25,7 @@ class LemoraConfig:
             os.getenv("LEMORA_DATA_DIR", user_data_dir(appname="lemora", appauthor=False)),
         )
         whitaker_path = _optional_path("LEMORA_WHITAKER_PATH")
-        lewis_short_path = _optional_path("LEMORA_LEWIS_SHORT_PATH")
+        lewis_short_path = _optional_path("LEMORA_LEWIS_SHORT_PATH") or _default_lewis_short_path()
         model_path = _optional_path("LEMORA_MODEL_PATH")
         return cls(
             data_dir=data_dir,
@@ -40,3 +40,15 @@ def _optional_path(env_name: str) -> Path | None:
     if raw_value is None or raw_value.strip() == "":
         return None
     return Path(raw_value).expanduser()
+
+
+_LEWIS_SHORT_CANDIDATES = (
+    Path.home() / "repos/lexica/CTS_XML_TEI/perseus/pdllex/lat/ls/lat.ls.perseus-eng2.xml",
+)
+
+
+def _default_lewis_short_path() -> Path | None:
+    for candidate in _LEWIS_SHORT_CANDIDATES:
+        if candidate.exists():
+            return candidate
+    return None

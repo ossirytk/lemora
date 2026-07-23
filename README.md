@@ -62,6 +62,7 @@ export LEMORA_MODEL_PATH=/path/to/model.gguf
 - By default, lemora uses Lewis & Short. Whitaker is optional and enabled only when `LEMORA_WHITAKER_PATH` is set.
 - Whitaker override expects JSON array entries with `lemma`, `gloss`, and optional `forms`, `confidence`, `morphology`.
 - Lewis & Short override accepts the same JSON format **or** Perseus `lat.ls.perseus-eng*.xml` TEI files.
+- Lewis & Short auto-detects `~/repos/lexica/CTS_XML_TEI/perseus/pdllex/lat/ls/lat.ls.perseus-eng2.xml` when present.
 - `LEMORA_MODEL_PATH` is only for optional synthesis models (for `--synthesize` workflows).
 
 ## Development
