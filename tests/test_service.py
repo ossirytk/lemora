@@ -189,6 +189,23 @@ def test_translate_prefers_exact_reference_phrase_entry_for_amor_fati() -> None:
     assert "fate" in result.senses[0].gloss
 
 
+def test_translate_prefers_exact_reference_phrase_entry_for_remaining_quotes() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+
+    cases = {
+        "Per aspera ad astra": "per aspera ad astra",
+        "Amor vincit omnia": "amor vincit omnia",
+        "Non ducor, duco": "non ducor duco",
+        "Dum vita est, spes est": "dum vita est spes est",
+        "Fons vitae caritas": "fons vitae caritas",
+    }
+
+    for query, expected_lemma in cases.items():
+        result = service.translate(query)
+        assert len(result.senses) == 1
+        assert result.senses[0].lemma == expected_lemma
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
