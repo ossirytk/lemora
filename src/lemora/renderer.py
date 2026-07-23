@@ -52,7 +52,7 @@ def _display_senses(senses: tuple[DictionarySense, ...]) -> list[tuple[Dictionar
 
     collapsed: list[tuple[DictionarySense, int]] = []
     for group in grouped.values():
-        best_sense = max(group, key=lambda sense: (readability_score(sense.gloss), sense.confidence))
+        best_sense = max(group, key=lambda sense: (sense.confidence, readability_score(sense.gloss)))
         collapsed.append((best_sense, len(group)))
 
     return sorted(

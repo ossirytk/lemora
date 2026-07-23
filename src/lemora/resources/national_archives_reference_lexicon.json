@@ -1,5 +1,5 @@
 [
-  {"lemma": "amor", "forms": ["amoris", "amorem", "amore", "amores", "amorum", "amoribus"], "gloss": "love", "confidence": 0.67, "morphology": "noun masculine"},
+  {"lemma": "amor", "forms": ["amoris", "amorem", "amore", "amores", "amorum", "amoribus"], "gloss": "love", "confidence": 0.99, "morphology": "noun masculine"},
   {"lemma": "amor fati", "forms": ["amor fati"], "gloss": "love of fate", "confidence": 0.96, "morphology": "phrase"},
   {"lemma": "asper", "forms": ["aspera", "asperum", "aspera"], "gloss": "rough; harsh; difficult", "confidence": 0.59, "morphology": "adjective"},
   {"lemma": "astra", "forms": ["astrorum", "astris"], "gloss": "stars", "confidence": 0.63, "morphology": "noun neuter plural"},

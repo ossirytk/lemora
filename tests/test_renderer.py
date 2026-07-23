@@ -64,3 +64,31 @@ def test_render_result_humanizes_imperative_abbreviation() -> None:
     render_result(console=console, result=result, output_format="plain")
     output = buffer.getvalue()
     assert "imperative of fio (be/become)" in output
+
+
+def test_render_result_prefers_higher_confidence_duplicate_gloss() -> None:
+    buffer = StringIO()
+    console = Console(file=buffer, force_terminal=False, color_system=None)
+    result = TranslationResult(
+        query="amor",
+        normalized_query="amor",
+        senses=(
+            DictionarySense(
+                lemma="amor",
+                gloss="to friends, parents, etc",
+                source="Lewis & Short",
+                confidence=0.83,
+            ),
+            DictionarySense(
+                lemma="amor",
+                gloss="love",
+                source="National Archives",
+                confidence=0.99,
+            ),
+        ),
+    )
+
+    render_result(console=console, result=result, output_format="plain")
+    output = buffer.getvalue()
+    assert "love" in output
+    assert "friends, parents" not in output

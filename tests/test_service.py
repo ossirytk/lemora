@@ -206,6 +206,13 @@ def test_translate_prefers_exact_reference_phrase_entry_for_remaining_quotes() -
         assert result.senses[0].lemma == expected_lemma
 
 
+def test_translate_prefers_reference_amor_gloss() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("amor")
+    assert result.senses[0].lemma == "amor"
+    assert result.senses[0].gloss == "love"
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
