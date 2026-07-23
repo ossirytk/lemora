@@ -173,6 +173,22 @@ def test_translate_prefers_exact_reference_phrase_entry() -> None:
     assert "peace" in result.senses[0].gloss
 
 
+def test_translate_prefers_exact_reference_phrase_entry_for_cogito_ergo_sum() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("Cogito, ergo sum")
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "cogito ergo sum"
+    assert "think" in result.senses[0].gloss
+
+
+def test_translate_prefers_exact_reference_phrase_entry_for_amor_fati() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("Amor Fati")
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "amor fati"
+    assert "fate" in result.senses[0].gloss
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
