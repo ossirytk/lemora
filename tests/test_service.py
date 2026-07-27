@@ -275,16 +275,45 @@ def test_reference_adapter_covers_extended_pronoun_lemmas() -> None:
 
 def test_reference_adapter_covers_common_sentence_words() -> None:
     service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
-    result = service.translate("ad in de forum amicus liber mensa causa domus magnus memoria locus")
+    result = service.translate("ad in de forum amicus liber mensa causa domus magnus memoria locus femina templum puer")
     lemmas = {sense.lemma for sense in result.senses}
-    assert {"ad", "in", "de", "forum", "amicus", "liber", "mensa", "causa", "domus", "magnus", "memoria", "locus"} <= lemmas
+    assert {
+        "ad",
+        "in",
+        "de",
+        "forum",
+        "amicus",
+        "liber",
+        "mensa",
+        "causa",
+        "domus",
+        "magnus",
+        "memoria",
+        "locus",
+        "femina",
+        "templum",
+        "puer",
+    } <= lemmas
 
 
 def test_reference_adapter_covers_common_sentence_verbs() -> None:
     service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
-    result = service.translate("sunt veniunt venistis")
+    result = service.translate("sunt veniunt venistis damus dant manemus")
     lemmas = {sense.lemma for sense in result.senses}
-    assert {"sum", "venio"} <= lemmas
+    assert {"sum", "venio", "do", "maneo"} <= lemmas
+
+
+def test_reference_adapter_covers_pronoun_with_cum_form() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("quibuscum")
+    assert result.senses[0].lemma == "qui"
+
+
+def test_translate_prefers_reference_pronoun_for_quibuscum_phrase() -> None:
+    service = LemoraService(dictionaries=[LewisShortAdapter(), NationalArchivesReferenceAdapter()])
+    result = service.translate("quibuscum venit")
+    lemmas = [sense.lemma for sense in result.senses]
+    assert lemmas == ["qui", "venio"]
 
 
 class _StubDictionary(DictionaryAdapter):
