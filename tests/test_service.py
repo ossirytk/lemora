@@ -214,6 +214,13 @@ def test_translate_prefers_reference_amor_gloss() -> None:
     assert result.senses[0].gloss == "love"
 
 
+def test_reference_adapter_covers_common_function_words() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("si et aut ergo dum veritas")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert {"si", "et", "aut", "ergo", "dum", "veritas"} <= lemmas
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
