@@ -1,6 +1,7 @@
 [
   {"lemma": "amor", "forms": ["amoris", "amorem", "amore", "amores", "amorum", "amoribus"], "gloss": "love", "confidence": 0.99, "morphology": "noun masculine"},
   {"lemma": "amor fati", "forms": ["amor fati"], "gloss": "love of fate", "confidence": 0.96, "morphology": "phrase"},
+  {"lemma": "arma", "forms": ["arma", "armorum", "armis"], "gloss": "arms; weapons", "confidence": 0.98, "morphology": "noun neuter plural"},
   {"lemma": "asper", "forms": ["aspera", "asperum", "aspera"], "gloss": "rough; harsh; difficult", "confidence": 0.59, "morphology": "adjective"},
   {"lemma": "astra", "forms": ["astrorum", "astris"], "gloss": "stars", "confidence": 0.63, "morphology": "noun neuter plural"},
   {"lemma": "bellum", "forms": ["belli", "bello", "bella", "bellorum", "bellis"], "gloss": "war", "confidence": 0.68, "morphology": "noun neuter"},
@@ -36,6 +37,7 @@
   {"lemma": "spes", "forms": ["spei", "spem", "spe", "spes", "spes", "spibus"], "gloss": "hope", "confidence": 0.66, "morphology": "noun feminine"},
   {"lemma": "sum", "forms": ["es", "est", "sumus", "estis", "sunt", "esse", "fui", "fueram", "fuerit", "eram", "erat", "erant"], "gloss": "to be", "confidence": 0.72, "morphology": "verb"},
   {"lemma": "via", "forms": ["viam", "viae", "via", "viis"], "gloss": "way; road", "confidence": 0.68, "morphology": "noun feminine"},
+  {"lemma": "vir", "forms": ["viri", "virum", "viro", "viros"], "gloss": "man; husband", "confidence": 0.98, "morphology": "noun masculine"},
   {"lemma": "nos", "forms": ["nostri", "nostrum", "nobis"], "gloss": "we; us", "confidence": 0.98, "morphology": "pronoun"},
   {"lemma": "cogito ergo sum", "forms": ["cogito ergo sum"], "gloss": "I think, therefore I am", "confidence": 0.97, "morphology": "phrase"},
   {"lemma": "vinco", "forms": ["vincis", "vincit", "vincimus", "vincitis", "vincunt", "vincere", "vici", "victum"], "gloss": "to conquer; overcome", "confidence": 0.7, "morphology": "verb"},

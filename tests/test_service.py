@@ -65,6 +65,13 @@ def test_translate_strips_enclitic_que_for_token_lookup() -> None:
     assert all(sense.lemma == "vir" for sense in result.senses)
 
 
+def test_translate_derives_stem_variant_for_inflected_token() -> None:
+    service = LemoraService(dictionaries=[_StubQueryDictionary()])
+    result = service.translate("virumque")
+    assert len(result.senses) == 1
+    assert result.senses[0].lemma == "vir"
+
+
 def test_translate_uses_analyzer_lemma_candidates_for_lookup() -> None:
     service = LemoraService(
         dictionaries=[_StubQueryDictionary()],
@@ -157,6 +164,30 @@ def test_translate_limits_multi_token_phrase_noise() -> None:
     assert "vicus" not in lemmas
 
 
+def test_translate_covers_distinct_tokens_not_just_top_n_scores() -> None:
+    service = LemoraService(
+        dictionaries=[
+            _StubDictionary(
+                source_name="Lewis & Short",
+                senses=[
+                    DictionarySense(lemma="alpha", gloss="first alpha gloss", source="Lewis & Short", confidence=0.95),
+                    DictionarySense(lemma="alpha", gloss="second alpha gloss", source="Lewis & Short", confidence=0.94),
+                    DictionarySense(lemma="beta", gloss="beta gloss", source="Lewis & Short", confidence=0.80),
+                ],
+            ),
+        ],
+        analyzer=_StubAnalyzer(
+            [
+                TokenAnalysis(token="a", lemma_candidates=("alpha",), pos="NOUN"),
+                TokenAnalysis(token="b", lemma_candidates=("beta",), pos="NOUN"),
+            ],
+        ),
+    )
+    result = service.translate("a b")
+    lemmas = [sense.lemma for sense in result.senses]
+    assert lemmas == ["alpha", "beta"]
+
+
 def test_reference_adapter_covers_common_school_latin_phrase() -> None:
     service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
     result = service.translate("Veritas liberabit vos")
@@ -219,6 +250,13 @@ def test_reference_adapter_covers_common_function_words() -> None:
     result = service.translate("si et aut ergo dum veritas")
     lemmas = {sense.lemma for sense in result.senses}
     assert {"si", "et", "aut", "ergo", "dum", "veritas"} <= lemmas
+
+
+def test_reference_adapter_covers_arma_virumque_with_clean_lemmas() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("arma virumque")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert {"arma", "vir"} <= lemmas
 
 
 def test_reference_adapter_covers_inflected_pronoun_forms() -> None:
@@ -301,6 +339,15 @@ class _StubQueryDictionary(DictionaryAdapter):
                 DictionarySense(
                     lemma="vinco",
                     gloss="to conquer",
+                    source=self.source_name,
+                    confidence=0.66,
+                ),
+            ]
+        if query == "vir":
+            return [
+                DictionarySense(
+                    lemma="vir",
+                    gloss="man",
                     source=self.source_name,
                     confidence=0.66,
                 ),

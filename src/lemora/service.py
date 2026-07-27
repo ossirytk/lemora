@@ -60,7 +60,7 @@ class LemoraService:
         exact_phrase = _exact_phrase_senses(ranked, normalized_query)
         if exact_phrase:
             return exact_phrase
-        return _limit_phrase_senses(ranked, token_analysis)
+        return _cover_tokens(ranked, normalized_query, token_analysis)
 
 
 def _normalize_query(query: str) -> str:
@@ -100,6 +100,9 @@ def _token_variants(normalized_query: str) -> list[str]:
     variants.extend(
         token[: -len(enclitic)] for token in tokens if token.endswith(enclitic) and len(token) > len(enclitic)
     )
+    for token in tokens:
+        stem_base = token[: -len(enclitic)] if token.endswith(enclitic) and len(token) > len(enclitic) else token
+        variants.extend(_surface_stem_variants(stem_base))
     return variants
 
 
@@ -145,10 +148,47 @@ def _rank_senses(senses: list[DictionarySense]) -> list[DictionarySense]:
     )
 
 
-def _limit_phrase_senses(senses: list[DictionarySense], token_analysis: tuple[TokenAnalysis, ...]) -> list[DictionarySense]:
-    if len(token_analysis) <= 1:
+def _cover_tokens(
+    senses: list[DictionarySense],
+    normalized_query: str,
+    token_analysis: tuple[TokenAnalysis, ...],
+) -> list[DictionarySense]:
+    tokens = _token_profiles(normalized_query, token_analysis)
+    if len(tokens) <= 1:
         return senses
-    return senses[: len(token_analysis)]
+
+    selected: list[DictionarySense] = []
+    selected_keys: set[tuple[str, str]] = set()
+
+    for variants in tokens:
+        match = next(
+            (
+                sense
+                for sense in senses
+                if _normalize_query(sense.lemma) in variants
+                and (_normalize_query(sense.lemma), _normalize_query(sense.gloss)) not in selected_keys
+            ),
+            None,
+        )
+        if match is None:
+            match = next(
+                (
+                    sense
+                    for sense in senses
+                    if (_normalize_query(sense.lemma), _normalize_query(sense.gloss)) not in selected_keys
+                ),
+                None,
+            )
+        if match is None:
+            continue
+        key = (_normalize_query(match.lemma), _normalize_query(match.gloss))
+        selected.append(match)
+        selected_keys.add(key)
+
+    if not selected:
+        return senses[: len(tokens)]
+
+    return selected
 
 
 def _exact_phrase_senses(senses: list[DictionarySense], normalized_query: str) -> list[DictionarySense]:
@@ -158,6 +198,56 @@ def _exact_phrase_senses(senses: list[DictionarySense], normalized_query: str) -
     if not exact_matches:
         return []
     return exact_matches
+
+
+def _token_profiles(normalized_query: str, token_analysis: tuple[TokenAnalysis, ...]) -> list[set[str]]:
+    enclitic = "que"
+    grammar = load_national_archives_grammar()
+
+    source_tokens = (
+        [token.token for token in token_analysis]
+        if token_analysis
+        else [token for token in normalized_query.split() if token != ""]
+    )
+    source_lemma_candidates = (
+        [token.lemma_candidates for token in token_analysis]
+        if token_analysis
+        else [tuple() for _ in source_tokens]
+    )
+
+    profiles: list[set[str]] = []
+    for token, lemma_candidates in zip(source_tokens, source_lemma_candidates, strict=False):
+        variants = {_normalize_query(token)}
+        variants.update(_normalize_query(candidate) for candidate in lemma_candidates)
+
+        if token.endswith(enclitic) and len(token) > len(enclitic):
+            token = token[: -len(enclitic)]
+            variants.add(_normalize_query(token))
+
+        variants.update(_surface_stem_variants(token))
+
+        pronoun_mapped = grammar.pronoun_lemma_by_form.get(token)
+        if pronoun_mapped is not None:
+            variants.add(_normalize_query(pronoun_mapped))
+        verb_mapped = grammar.verb_lemma_by_form.get(token)
+        if verb_mapped is not None:
+            variants.add(_normalize_query(verb_mapped))
+
+        profiles.append({variant for variant in variants if variant != ""})
+
+    return profiles
+
+
+def _surface_stem_variants(token: str) -> set[str]:
+    lowered = _normalize_query(token)
+    if lowered == "":
+        return set()
+
+    variants = {lowered}
+    for suffix in ("orum", "arum", "ibus", "ium", "um", "am", "em", "as", "os", "es", "is", "ae", "i", "o", "u"):
+        if lowered.endswith(suffix) and len(lowered) > len(suffix) + 1:
+            variants.add(lowered[: -len(suffix)])
+    return variants
 
 
 def _score_sense(sense: DictionarySense) -> float:
