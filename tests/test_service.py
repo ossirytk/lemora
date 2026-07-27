@@ -280,6 +280,13 @@ def test_reference_adapter_covers_common_sentence_words() -> None:
     assert {"ad", "in", "de", "forum", "amicus", "liber", "mensa", "causa", "domus", "magnus", "memoria", "locus"} <= lemmas
 
 
+def test_reference_adapter_covers_common_sentence_verbs() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("sunt veniunt venistis")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert {"sum", "venio"} <= lemmas
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name
