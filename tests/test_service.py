@@ -266,6 +266,13 @@ def test_reference_adapter_covers_inflected_pronoun_forms() -> None:
     assert {"ille", "qui", "se", "nos", "vos"} <= lemmas
 
 
+def test_reference_adapter_covers_extended_pronoun_lemmas() -> None:
+    service = LemoraService(dictionaries=[NationalArchivesReferenceAdapter()])
+    result = service.translate("eiusdem ipsorum istius")
+    lemmas = {sense.lemma for sense in result.senses}
+    assert {"idem", "ipse", "iste"} <= lemmas
+
+
 class _StubDictionary(DictionaryAdapter):
     def __init__(self, source_name: str, senses: list[DictionarySense]) -> None:
         self.source_name = source_name

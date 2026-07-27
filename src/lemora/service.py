@@ -101,8 +101,8 @@ def _token_variants(normalized_query: str) -> list[str]:
         token[: -len(enclitic)] for token in tokens if token.endswith(enclitic) and len(token) > len(enclitic)
     )
     for token in tokens:
-        stem_base = token[: -len(enclitic)] if token.endswith(enclitic) and len(token) > len(enclitic) else token
-        variants.extend(_surface_stem_variants(stem_base))
+        if token.endswith(enclitic) and len(token) > len(enclitic):
+            variants.extend(_surface_stem_variants(token[: -len(enclitic)]))
     return variants
 
 
@@ -223,8 +223,7 @@ def _token_profiles(normalized_query: str, token_analysis: tuple[TokenAnalysis, 
         if token.endswith(enclitic) and len(token) > len(enclitic):
             token = token[: -len(enclitic)]
             variants.add(_normalize_query(token))
-
-        variants.update(_surface_stem_variants(token))
+            variants.update(_surface_stem_variants(token))
 
         pronoun_mapped = grammar.pronoun_lemma_by_form.get(token)
         if pronoun_mapped is not None:
