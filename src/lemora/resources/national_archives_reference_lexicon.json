@@ -1,5 +1,22 @@
 [
   {
+    "lemma": "accipio",
+    "forms": [
+      "accipis",
+      "accipit",
+      "accipimus",
+      "accipitis",
+      "accipiunt",
+      "accipere",
+      "accepi",
+      "acceptum",
+      "accipio"
+    ],
+    "gloss": "to receive; accept",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "ad",
     "forms": [
       "ad"
@@ -179,6 +196,23 @@
     "morphology": "noun feminine"
   },
   {
+    "lemma": "arena",
+    "forms": [
+      "arena",
+      "arenae",
+      "arenam",
+      "arena",
+      "arenas",
+      "arenarum",
+      "arenis",
+      "harena",
+      "harenae"
+    ],
+    "gloss": "sand; arena",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "arma",
     "forms": [
       "arma",
@@ -278,6 +312,15 @@
     "morphology": "noun neuter"
   },
   {
+    "lemma": "bene",
+    "forms": [
+      "bene"
+    ],
+    "gloss": "well; rightly",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
     "lemma": "bonus",
     "forms": [
       "bona",
@@ -295,6 +338,23 @@
     "gloss": "good",
     "confidence": 0.98,
     "morphology": "adjective"
+  },
+  {
+    "lemma": "cado",
+    "forms": [
+      "cadis",
+      "cadit",
+      "cadimus",
+      "caditis",
+      "cadunt",
+      "cadere",
+      "cecidi",
+      "casum",
+      "cado"
+    ],
+    "gloss": "to fall",
+    "confidence": 0.98,
+    "morphology": "verb"
   },
   {
     "lemma": "capio",
@@ -328,6 +388,21 @@
     "morphology": "noun feminine"
   },
   {
+    "lemma": "carmen",
+    "forms": [
+      "carminis",
+      "carmini",
+      "carmen",
+      "carmine",
+      "carmina",
+      "carminum",
+      "carminibus"
+    ],
+    "gloss": "song; poem",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "causa",
     "forms": [
       "causae",
@@ -340,6 +415,31 @@
     "gloss": "cause; reason",
     "confidence": 0.98,
     "morphology": "noun feminine"
+  },
+  {
+    "lemma": "circa",
+    "forms": [
+      "circa",
+      "circum"
+    ],
+    "gloss": "around; near",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "civis",
+    "forms": [
+      "civis",
+      "civi",
+      "civem",
+      "cive",
+      "cives",
+      "civium",
+      "civibus"
+    ],
+    "gloss": "citizen",
+    "confidence": 0.98,
+    "morphology": "noun masculine/feminine"
   },
   {
     "lemma": "cogito",
@@ -365,6 +465,15 @@
     "gloss": "I think, therefore I am",
     "confidence": 0.97,
     "morphology": "phrase"
+  },
+  {
+    "lemma": "contra",
+    "forms": [
+      "contra"
+    ],
+    "gloss": "against; opposite",
+    "confidence": 0.98,
+    "morphology": "preposition"
   },
   {
     "lemma": "corpus",
@@ -400,6 +509,23 @@
     "morphology": "adverb"
   },
   {
+    "lemma": "curro",
+    "forms": [
+      "curris",
+      "currit",
+      "currimus",
+      "curritis",
+      "currunt",
+      "currere",
+      "cucurri",
+      "cursum",
+      "curro"
+    ],
+    "gloss": "to run",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "de",
     "forms": [
       "de"
@@ -407,6 +533,52 @@
     "gloss": "from; about; concerning",
     "confidence": 0.98,
     "morphology": "preposition"
+  },
+  {
+    "lemma": "dea",
+    "forms": [
+      "deae",
+      "deam",
+      "dea",
+      "deas",
+      "dearum",
+      "deabus"
+    ],
+    "gloss": "goddess",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "debeo",
+    "forms": [
+      "debes",
+      "debet",
+      "debemus",
+      "debetis",
+      "debent",
+      "debere",
+      "debui",
+      "debitum",
+      "debeo"
+    ],
+    "gloss": "to owe; ought; must",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "deus",
+    "forms": [
+      "dei",
+      "deo",
+      "deum",
+      "deos",
+      "deorum",
+      "diis",
+      "dis"
+    ],
+    "gloss": "god",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
   },
   {
     "lemma": "dico",
@@ -443,6 +615,24 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "disco",
+    "forms": [
+      "discis",
+      "discit",
+      "discimus",
+      "discitis",
+      "discunt",
+      "discere",
+      "didici",
+      "discitum",
+      "discunt",
+      "disco"
+    ],
+    "gloss": "to learn",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "do",
     "forms": [
       "do",
@@ -456,6 +646,23 @@
       "datum"
     ],
     "gloss": "to give",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "doceo",
+    "forms": [
+      "doces",
+      "docet",
+      "docemus",
+      "docetis",
+      "docent",
+      "docere",
+      "docui",
+      "doctum",
+      "doceo"
+    ],
+    "gloss": "to teach",
     "confidence": 0.98,
     "morphology": "verb"
   },
@@ -526,6 +733,38 @@
     "morphology": "pronoun"
   },
   {
+    "lemma": "eo",
+    "forms": [
+      "is",
+      "it",
+      "imus",
+      "itis",
+      "eunt",
+      "ire",
+      "ivi",
+      "itum",
+      "eo",
+      "i"
+    ],
+    "gloss": "to go",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "epistula",
+    "forms": [
+      "epistulae",
+      "epistulam",
+      "epistula",
+      "epistulas",
+      "epistularum",
+      "epistulis"
+    ],
+    "gloss": "letter; message",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "ergo",
     "forms": [
       "ergo"
@@ -552,6 +791,38 @@
     "gloss": "from; out of",
     "confidence": 0.98,
     "morphology": "preposition"
+  },
+  {
+    "lemma": "exercitus",
+    "forms": [
+      "exercitus",
+      "exercitui",
+      "exercitum",
+      "exercitu",
+      "exercituum",
+      "exercitibus"
+    ],
+    "gloss": "army",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "extra",
+    "forms": [
+      "extra"
+    ],
+    "gloss": "outside; beyond",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "facile",
+    "forms": [
+      "facile"
+    ],
+    "gloss": "easily",
+    "confidence": 0.98,
+    "morphology": "adverb"
   },
   {
     "lemma": "facio",
@@ -615,6 +886,21 @@
     "morphology": "noun masculine"
   },
   {
+    "lemma": "flumen",
+    "forms": [
+      "fluminis",
+      "flumini",
+      "flumen",
+      "flumine",
+      "flumina",
+      "fluminum",
+      "fluminibus"
+    ],
+    "gloss": "river",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "fons",
     "forms": [
       "fontis",
@@ -670,6 +956,35 @@
     "morphology": "verb"
   },
   {
+    "lemma": "gladiator",
+    "forms": [
+      "gladiatoris",
+      "gladiatori",
+      "gladiatorem",
+      "gladiatore",
+      "gladiatores",
+      "gladiatorum",
+      "gladiatoribus"
+    ],
+    "gloss": "gladiator; swordsman",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "gladius",
+    "forms": [
+      "gladii",
+      "gladio",
+      "gladium",
+      "gladios",
+      "gladiorum",
+      "gladiis"
+    ],
+    "gloss": "sword",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "habeo",
     "forms": [
       "habes",
@@ -683,6 +998,23 @@
       "habeo"
     ],
     "gloss": "to have; hold",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "habito",
+    "forms": [
+      "habitas",
+      "habitat",
+      "habitamus",
+      "habitatis",
+      "habitant",
+      "habitare",
+      "habitavi",
+      "habitatum",
+      "habito"
+    ],
+    "gloss": "to live in; inhabit; dwell",
     "confidence": 0.98,
     "morphology": "verb"
   },
@@ -711,11 +1043,35 @@
     "morphology": "pronoun"
   },
   {
+    "lemma": "homo",
+    "forms": [
+      "hominis",
+      "homini",
+      "hominem",
+      "homine",
+      "homines",
+      "hominum",
+      "hominibus"
+    ],
+    "gloss": "man; human being; person",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "iam",
     "forms": [
       "iam"
     ],
     "gloss": "already; now",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "ibi",
+    "forms": [
+      "ibi"
+    ],
+    "gloss": "there; in that place",
     "confidence": 0.98,
     "morphology": "adverb"
   },
@@ -790,6 +1146,15 @@
       "inter"
     ],
     "gloss": "between; among",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "intra",
+    "forms": [
+      "intra"
+    ],
+    "gloss": "within; inside",
     "confidence": 0.98,
     "morphology": "preposition"
   },
@@ -875,6 +1240,21 @@
     "morphology": "pronoun"
   },
   {
+    "lemma": "iter",
+    "forms": [
+      "itineris",
+      "itineri",
+      "iter",
+      "itinere",
+      "itinera",
+      "itinerum",
+      "itineribus"
+    ],
+    "gloss": "journey; road; march",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "laboro",
     "forms": [
       "laboras",
@@ -892,6 +1272,25 @@
     "morphology": "verb"
   },
   {
+    "lemma": "latus",
+    "forms": [
+      "lata",
+      "latum",
+      "lati",
+      "latae",
+      "lato",
+      "latam",
+      "latos",
+      "latas",
+      "latorum",
+      "latarum",
+      "latis"
+    ],
+    "gloss": "wide; broad",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
     "lemma": "laus",
     "forms": [
       "laudis",
@@ -903,6 +1302,21 @@
       "laudibus"
     ],
     "gloss": "praise; glory",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "lex",
+    "forms": [
+      "legis",
+      "legi",
+      "legem",
+      "lege",
+      "leges",
+      "legum",
+      "legibus"
+    ],
+    "gloss": "law",
     "confidence": 0.98,
     "morphology": "noun feminine"
   },
@@ -952,6 +1366,25 @@
     "morphology": "noun masculine"
   },
   {
+    "lemma": "longus",
+    "forms": [
+      "longa",
+      "longum",
+      "longi",
+      "longae",
+      "longo",
+      "longam",
+      "longos",
+      "longas",
+      "longorum",
+      "longarum",
+      "longis"
+    ],
+    "gloss": "long",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
     "lemma": "loquor",
     "forms": [
       "loqueris",
@@ -988,6 +1421,15 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "male",
+    "forms": [
+      "male"
+    ],
+    "gloss": "badly; wrongly",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
     "lemma": "malus",
     "forms": [
       "mala",
@@ -1022,6 +1464,20 @@
     "gloss": "to remain",
     "confidence": 0.98,
     "morphology": "verb"
+  },
+  {
+    "lemma": "mare",
+    "forms": [
+      "maris",
+      "mari",
+      "mare",
+      "maria",
+      "marium",
+      "maribus"
+    ],
+    "gloss": "sea",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
   },
   {
     "lemma": "mater",
@@ -1078,6 +1534,21 @@
     "morphology": "noun masculine"
   },
   {
+    "lemma": "miles",
+    "forms": [
+      "militis",
+      "militi",
+      "militem",
+      "milite",
+      "milites",
+      "militum",
+      "militibus"
+    ],
+    "gloss": "soldier",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "mitto",
     "forms": [
       "mittis",
@@ -1091,6 +1562,23 @@
       "mitto"
     ],
     "gloss": "to send; let go",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "moneo",
+    "forms": [
+      "mones",
+      "monet",
+      "monemus",
+      "monetis",
+      "monent",
+      "monere",
+      "monui",
+      "monitum",
+      "moneo"
+    ],
+    "gloss": "to warn; advise",
     "confidence": 0.98,
     "morphology": "verb"
   },
@@ -1137,6 +1625,66 @@
     "gloss": "for; because",
     "confidence": 0.98,
     "morphology": "conjunction"
+  },
+  {
+    "lemma": "natura",
+    "forms": [
+      "naturae",
+      "naturam",
+      "natura",
+      "naturas",
+      "naturarum",
+      "naturis"
+    ],
+    "gloss": "nature; character",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "nauta",
+    "forms": [
+      "nautae",
+      "nautam",
+      "nauta",
+      "nautas",
+      "nautarum",
+      "nautis"
+    ],
+    "gloss": "sailor; seaman",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "navigo",
+    "forms": [
+      "navigas",
+      "navigat",
+      "navigamus",
+      "navigatis",
+      "navigant",
+      "navigare",
+      "navigavi",
+      "navigatum",
+      "navigo"
+    ],
+    "gloss": "to sail; navigate",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "navis",
+    "forms": [
+      "navis",
+      "navi",
+      "navem",
+      "nave",
+      "naves",
+      "navium",
+      "navibus"
+    ],
+    "gloss": "ship",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
   },
   {
     "lemma": "neque",
@@ -1230,6 +1778,15 @@
     "morphology": "adverb"
   },
   {
+    "lemma": "ob",
+    "forms": [
+      "ob"
+    ],
+    "gloss": "on account of; because of",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
     "lemma": "omnis",
     "forms": [
       "omnis",
@@ -1244,6 +1801,34 @@
     "gloss": "all; every",
     "confidence": 0.98,
     "morphology": "adjective"
+  },
+  {
+    "lemma": "oppidum",
+    "forms": [
+      "oppidi",
+      "oppido",
+      "oppidum",
+      "oppida",
+      "oppidorum",
+      "oppidis"
+    ],
+    "gloss": "town",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "palatium",
+    "forms": [
+      "palatii",
+      "palatio",
+      "palatium",
+      "palatia",
+      "palatiorum",
+      "palatiis"
+    ],
+    "gloss": "palace",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
   },
   {
     "lemma": "paro",
@@ -1297,6 +1882,20 @@
     "morphology": "noun masculine"
   },
   {
+    "lemma": "patria",
+    "forms": [
+      "patriae",
+      "patriam",
+      "patria",
+      "patrias",
+      "patriarum",
+      "patriis"
+    ],
+    "gloss": "fatherland; homeland",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "pax",
     "forms": [
       "pax",
@@ -1328,6 +1927,80 @@
     "gloss": "through hardships to the stars",
     "confidence": 0.97,
     "morphology": "phrase"
+  },
+  {
+    "lemma": "peto",
+    "forms": [
+      "petis",
+      "petit",
+      "petimus",
+      "petitis",
+      "petunt",
+      "petere",
+      "petivi",
+      "petitum",
+      "peto"
+    ],
+    "gloss": "to seek; attack; ask",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "philosophus",
+    "forms": [
+      "philosophi",
+      "philosopho",
+      "philosophum",
+      "philosophos",
+      "philosophorum",
+      "philosophis"
+    ],
+    "gloss": "philosopher",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "poeta",
+    "forms": [
+      "poetae",
+      "poetam",
+      "poeta",
+      "poetas",
+      "poetarum",
+      "poetis"
+    ],
+    "gloss": "poet",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "pons",
+    "forms": [
+      "pontis",
+      "ponti",
+      "pontem",
+      "ponte",
+      "pontes",
+      "pontium",
+      "pontibus"
+    ],
+    "gloss": "bridge",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "populus",
+    "forms": [
+      "populi",
+      "populo",
+      "populum",
+      "populos",
+      "populorum",
+      "populis"
+    ],
+    "gloss": "people; nation",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
   },
   {
     "lemma": "porta",
@@ -1387,6 +2060,15 @@
     "morphology": "preposition"
   },
   {
+    "lemma": "pro",
+    "forms": [
+      "pro"
+    ],
+    "gloss": "for; on behalf of; in front of",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
     "lemma": "propter",
     "forms": [
       "propter"
@@ -1425,6 +2107,25 @@
     "gloss": "to fight",
     "confidence": 0.98,
     "morphology": "verb"
+  },
+  {
+    "lemma": "pulcher",
+    "forms": [
+      "pulchra",
+      "pulchrum",
+      "pulchri",
+      "pulchrae",
+      "pulchro",
+      "pulchram",
+      "pulchros",
+      "pulchras",
+      "pulchrorum",
+      "pulchrarum",
+      "pulchris"
+    ],
+    "gloss": "beautiful; fine",
+    "confidence": 0.98,
+    "morphology": "adjective"
   },
   {
     "lemma": "quaero",
@@ -1507,6 +2208,54 @@
     "morphology": "verb"
   },
   {
+    "lemma": "relinquo",
+    "forms": [
+      "relinquis",
+      "relinquit",
+      "relinquimus",
+      "relinquitis",
+      "relinquunt",
+      "relinquere",
+      "reliqui",
+      "relictum",
+      "relinquo"
+    ],
+    "gloss": "to leave behind; abandon",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "res",
+    "forms": [
+      "rei",
+      "rem",
+      "re",
+      "res",
+      "rerum",
+      "rebus"
+    ],
+    "gloss": "thing; matter; affair",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "respondeo",
+    "forms": [
+      "respondes",
+      "respondet",
+      "respondemus",
+      "respondetis",
+      "respondent",
+      "respondere",
+      "respondi",
+      "responsum",
+      "respondeo"
+    ],
+    "gloss": "to answer; reply",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "rex",
     "forms": [
       "regis",
@@ -1522,6 +2271,25 @@
     "morphology": "noun masculine"
   },
   {
+    "lemma": "romanus",
+    "forms": [
+      "romana",
+      "romanum",
+      "romani",
+      "romanae",
+      "romano",
+      "romanam",
+      "romanos",
+      "romanas",
+      "romanorum",
+      "romanarum",
+      "romanis"
+    ],
+    "gloss": "Roman",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
     "lemma": "saepe",
     "forms": [
       "saepe"
@@ -1529,6 +2297,20 @@
     "gloss": "often",
     "confidence": 0.98,
     "morphology": "adverb"
+  },
+  {
+    "lemma": "schola",
+    "forms": [
+      "scholae",
+      "scholam",
+      "schola",
+      "scholas",
+      "scholarum",
+      "scholis"
+    ],
+    "gloss": "school; lecture",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
   },
   {
     "lemma": "scribo",
@@ -1597,6 +2379,38 @@
     "morphology": "adverb"
   },
   {
+    "lemma": "senatus",
+    "forms": [
+      "senatus",
+      "senati",
+      "senatui",
+      "senatum",
+      "senatu",
+      "senatus"
+    ],
+    "gloss": "senate",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "servo",
+    "forms": [
+      "servas",
+      "servat",
+      "servamus",
+      "servatis",
+      "servant",
+      "servare",
+      "servavi",
+      "servatum",
+      "servo",
+      "servassis"
+    ],
+    "gloss": "to keep; protect; save",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "si",
     "forms": [
       "si"
@@ -1613,6 +2427,20 @@
     "gloss": "if you want peace, prepare for war",
     "confidence": 0.97,
     "morphology": "phrase"
+  },
+  {
+    "lemma": "silva",
+    "forms": [
+      "silvae",
+      "silvam",
+      "silva",
+      "silvas",
+      "silvarum",
+      "silvis"
+    ],
+    "gloss": "forest; wood",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
   },
   {
     "lemma": "sine",
@@ -1635,6 +2463,15 @@
     "gloss": "hope",
     "confidence": 0.98,
     "morphology": "noun feminine"
+  },
+  {
+    "lemma": "statim",
+    "forms": [
+      "statim"
+    ],
+    "gloss": "immediately; at once",
+    "confidence": 0.98,
+    "morphology": "adverb"
   },
   {
     "lemma": "sub",
@@ -1667,6 +2504,15 @@
     "morphology": "verb"
   },
   {
+    "lemma": "super",
+    "forms": [
+      "super"
+    ],
+    "gloss": "above; over; beyond",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
     "lemma": "tamen",
     "forms": [
       "tamen"
@@ -1674,6 +2520,15 @@
     "gloss": "however; nevertheless",
     "confidence": 0.98,
     "morphology": "conjunction"
+  },
+  {
+    "lemma": "tandem",
+    "forms": [
+      "tandem"
+    ],
+    "gloss": "at last; finally",
+    "confidence": 0.98,
+    "morphology": "adverb"
   },
   {
     "lemma": "templum",
@@ -1688,6 +2543,23 @@
     "gloss": "temple",
     "confidence": 0.98,
     "morphology": "noun neuter"
+  },
+  {
+    "lemma": "teneo",
+    "forms": [
+      "tenes",
+      "tenet",
+      "tenemus",
+      "tenetis",
+      "tenent",
+      "tenere",
+      "tenui",
+      "tentum",
+      "teneo"
+    ],
+    "gloss": "to hold; keep",
+    "confidence": 0.98,
+    "morphology": "verb"
   },
   {
     "lemma": "terra",
@@ -1735,6 +2607,15 @@
     "morphology": "noun masculine"
   },
   {
+    "lemma": "trans",
+    "forms": [
+      "trans"
+    ],
+    "gloss": "across; over",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
     "lemma": "tu",
     "forms": [
       "tu",
@@ -1754,6 +2635,30 @@
     "gloss": "where; when",
     "confidence": 0.98,
     "morphology": "adverb"
+  },
+  {
+    "lemma": "ultra",
+    "forms": [
+      "ultra"
+    ],
+    "gloss": "beyond; on the far side",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "urbs",
+    "forms": [
+      "urbis",
+      "urbi",
+      "urbem",
+      "urbe",
+      "urbes",
+      "urbium",
+      "urbibus"
+    ],
+    "gloss": "city",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
   },
   {
     "lemma": "ut",
