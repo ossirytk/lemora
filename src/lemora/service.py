@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from lemora.grammar_reference import load_national_archives_grammar
+from lemora.adapters.national_archives_reference import load_reference_form_index
 from lemora.models import TranslationResult
 
 if TYPE_CHECKING:
@@ -216,6 +217,7 @@ def _token_profiles(normalized_query: str, token_analysis: tuple[TokenAnalysis, 
     )
 
     profiles: list[set[str]] = []
+    ref_index = load_reference_form_index()
     for token, lemma_candidates in zip(source_tokens, source_lemma_candidates, strict=False):
         variants = {_normalize_query(token)}
         variants.update(_normalize_query(candidate) for candidate in lemma_candidates)
@@ -231,6 +233,14 @@ def _token_profiles(normalized_query: str, token_analysis: tuple[TokenAnalysis, 
         verb_mapped = grammar.verb_lemma_by_form.get(token)
         if verb_mapped is not None:
             variants.add(_normalize_query(verb_mapped))
+
+        # Enrich variants with the lemma that the reference lexicon associates with
+        # any surface form in this token's variant set (handles declined nouns,
+        # conjugated verbs, etc., e.g. ``meridiem`` → ``meridies``).
+        for v in list(variants):
+            ref_lemma = ref_index.get(v)
+            if ref_lemma is not None:
+                variants.add(ref_lemma)
 
         profiles.append({variant for variant in variants if variant != ""})
 

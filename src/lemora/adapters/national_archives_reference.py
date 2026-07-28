@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from functools import lru_cache
 from importlib.resources import files
 from typing import TYPE_CHECKING
 
@@ -88,6 +89,27 @@ def _build_query_index(entries: tuple[LexiconEntry, ...]) -> dict[str, list[Lexi
     for entry in entries:
         for lookup_key in {_normalize_lookup_key(entry.lemma), *(_normalize_lookup_key(form) for form in entry.forms)}:
             index.setdefault(lookup_key, []).append(entry)
+    return index
+
+
+@lru_cache(maxsize=1)
+def load_reference_form_index() -> dict[str, str]:
+    """Return a normalized form→lemma mapping for all bundled reference entries.
+
+    Used by the service layer to enrich token profiles so that declined/conjugated
+    surface forms (e.g. ``meridiem``) resolve to their lemma (``meridies``) when
+    matching against dictionary senses in ``_cover_tokens``.
+    """
+    entries = _load_entries(None)
+    index: dict[str, str] = {}
+    for entry in entries:
+        lemma_key = _normalize_lookup_key(entry.lemma)
+        for form in entry.forms:
+            form_key = _normalize_lookup_key(form)
+            if form_key not in index:
+                index[form_key] = lemma_key
+        if lemma_key not in index:
+            index[lemma_key] = lemma_key
     return index
 
 

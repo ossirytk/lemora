@@ -1,75 +1,1939 @@
 [
-  {"lemma": "amor", "forms": ["amoris", "amorem", "amore", "amores", "amorum", "amoribus"], "gloss": "love", "confidence": 0.99, "morphology": "noun masculine"},
-  {"lemma": "amor fati", "forms": ["amor fati"], "gloss": "love of fate", "confidence": 0.96, "morphology": "phrase"},
-  {"lemma": "arma", "forms": ["arma", "armorum", "armis"], "gloss": "arms; weapons", "confidence": 0.98, "morphology": "noun neuter plural"},
-  {"lemma": "asper", "forms": ["aspera", "asperum", "aspera"], "gloss": "rough; harsh; difficult", "confidence": 0.59, "morphology": "adjective"},
-  {"lemma": "astra", "forms": ["astrorum", "astris"], "gloss": "stars", "confidence": 0.63, "morphology": "noun neuter plural"},
-  {"lemma": "ad", "forms": ["ad"], "gloss": "to; toward", "confidence": 0.98, "morphology": "preposition"},
-  {"lemma": "amicus", "forms": ["amici", "amicum", "amico", "amicos", "amicorum", "amicis"], "gloss": "friend", "confidence": 0.98, "morphology": "noun masculine"},
-  {"lemma": "bellum", "forms": ["belli", "bello", "bella", "bellorum", "bellis"], "gloss": "war", "confidence": 0.68, "morphology": "noun neuter"},
-  {"lemma": "causa", "forms": ["causae", "causam", "causa", "causas", "causarum", "causis"], "gloss": "cause; reason", "confidence": 0.98, "morphology": "noun feminine"},
-  {"lemma": "caritas", "forms": ["caritatis", "caritati", "caritate", "caritates", "caritatum", "caritatibus"], "gloss": "love; charity", "confidence": 0.66, "morphology": "noun feminine"},
-  {"lemma": "cogito", "forms": ["cogitas", "cogitat", "cogitamus", "cogitatis", "cogitant", "cogitare", "cogitavi", "cogitatum"], "gloss": "to think", "confidence": 0.7, "morphology": "verb"},
-  {"lemma": "cum", "forms": ["cum"], "gloss": "with", "confidence": 0.98, "morphology": "preposition"},
-  {"lemma": "de", "forms": ["de"], "gloss": "from; about; concerning", "confidence": 0.98, "morphology": "preposition"},
-  {"lemma": "do", "forms": ["do", "das", "dat", "damus", "datis", "dant", "dare", "dedi", "datum"], "gloss": "to give", "confidence": 0.98, "morphology": "verb"},
-  {"lemma": "domus", "forms": ["domus", "domum", "domui", "domo", "domuum", "domibus"], "gloss": "house; home", "confidence": 0.98, "morphology": "noun feminine"},
-  {"lemma": "duco", "forms": ["ducis", "ducit", "ducimus", "ducitis", "ducunt", "ducere", "duxi", "ductum", "ducor", "duceris", "ducitur", "ducimur", "ducimini", "ducuntur"], "gloss": "to lead; guide", "confidence": 0.71, "morphology": "verb"},
-  {"lemma": "non ducor duco", "forms": ["non ducor duco"], "gloss": "I am not led, I lead", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "dum", "forms": ["dum"], "gloss": "while", "confidence": 0.61, "morphology": "conjunction"},
-  {"lemma": "ergo", "forms": ["ergo"], "gloss": "therefore", "confidence": 0.6, "morphology": "adverb"},
-  {"lemma": "facio", "forms": ["facis", "facit", "facimus", "facitis", "faciunt", "facere", "feci", "factum", "faciam", "faciat", "faciant", "para"], "gloss": "to do; make", "confidence": 0.69, "morphology": "verb"},
-  {"lemma": "fons", "forms": ["fontis", "fontem", "fonte", "fontes", "fontium", "fontibus"], "gloss": "spring; fountain; source", "confidence": 0.64, "morphology": "noun masculine"},
-  {"lemma": "fons vitae caritas", "forms": ["fons vitae caritas"], "gloss": "love is the fountain of life", "confidence": 0.96, "morphology": "phrase"},
-  {"lemma": "forum", "forms": ["fori", "foro", "forum", "fora", "fororum", "foris"], "gloss": "marketplace; forum", "confidence": 0.98, "morphology": "noun neuter"},
-  {"lemma": "femina", "forms": ["feminae", "feminam", "femina", "feminas", "feminarum", "feminis"], "gloss": "woman", "confidence": 0.98, "morphology": "noun feminine"},
-  {"lemma": "hic", "forms": ["hec", "haec", "hoc", "hunc", "hanc", "huius", "huic", "hac", "hi", "he", "hos", "has", "horum", "harum", "his", "hiis"], "gloss": "this; he/she/it", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "in", "forms": ["in"], "gloss": "in; on; into", "confidence": 0.98, "morphology": "preposition"},
-  {"lemma": "invenio", "forms": ["invenis", "invenit", "invenimus", "invenitis", "inveniunt", "invenire", "inveni", "inventum", "inveniam", "inveniat", "inveniant"], "gloss": "to find; discover", "confidence": 0.69, "morphology": "verb"},
-  {"lemma": "venio", "forms": ["venio", "venis", "venit", "venimus", "venitis", "veniunt", "venire", "veni", "ventum", "venistis"], "gloss": "to come", "confidence": 0.98, "morphology": "verb"},
-  {"lemma": "idem", "forms": ["eadem", "eundem", "eandem", "eiusdem", "eidem", "eodem", "iidem", "eaedem", "eedem", "eosdem", "easdem", "eorundem", "earumdem", "eisdem", "iisdem"], "gloss": "the same", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "ipse", "forms": ["ipsa", "ipsum", "ipsam", "ipsius", "ipsi", "ipso", "ipsos", "ipsas", "ipsorum", "ipsarum", "ipsis"], "gloss": "self; himself/herself/itself", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "iste", "forms": ["ista", "istud", "istum", "istam", "istius", "isti", "isto", "istos", "istas", "istorum", "istarum", "istis"], "gloss": "that (near you)", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "ille", "forms": ["illa", "illud", "illum", "illam", "illius", "illi", "illo", "illos", "illas", "illorum", "illis"], "gloss": "that; he/she/it", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "liber", "forms": ["libri", "librum", "libro", "libros", "librorum", "libris"], "gloss": "book", "confidence": 0.98, "morphology": "noun masculine"},
-  {"lemma": "locus", "forms": ["loci", "locum", "loco", "locos", "locorum", "locis"], "gloss": "place", "confidence": 0.98, "morphology": "noun masculine"},
-  {"lemma": "magnus", "forms": ["magna", "magnum", "magni", "magnae", "magno", "magnam", "magnum", "magni", "magnae", "magna", "magnorum", "magnarum", "magnis"], "gloss": "great; large", "confidence": 0.98, "morphology": "adjective"},
-  {"lemma": "maneo", "forms": ["maneo", "manes", "manet", "manemus", "manetis", "manent", "manere", "mansi", "mansum"], "gloss": "to remain", "confidence": 0.98, "morphology": "verb"},
-  {"lemma": "memoria", "forms": ["memoriae", "memoriam", "memoria", "memorias", "memoriarum", "memoriis"], "gloss": "memory", "confidence": 0.98, "morphology": "noun feminine"},
-  {"lemma": "mensa", "forms": ["mensae", "mensam", "mensa", "mensas", "mensarum", "mensis"], "gloss": "table", "confidence": 0.98, "morphology": "noun feminine"},
-  {"lemma": "aut inveniam viam aut faciam", "forms": ["aut inveniam viam aut faciam"], "gloss": "I shall either find a way or make one", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "is", "forms": ["ea", "id", "eius", "ei", "eum", "eam", "ii", "ei", "ea", "eos", "eas", "eorum", "earum", "eis", "iis"], "gloss": "he/she/it; that", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "aut", "forms": ["aut"], "gloss": "or", "confidence": 0.98, "morphology": "conjunction"},
-  {"lemma": "libero", "forms": ["liberabit", "liberabis", "liberabit", "liberabimus", "liberabitis", "liberabunt", "liberare", "liberavi", "liberatum"], "gloss": "to free; set free", "confidence": 0.7, "morphology": "verb"},
-  {"lemma": "dum", "forms": ["dum"], "gloss": "while; until", "confidence": 0.98, "morphology": "conjunction"},
-  {"lemma": "ergo", "forms": ["ergo"], "gloss": "therefore", "confidence": 0.98, "morphology": "adverb"},
-  {"lemma": "non", "forms": ["non"], "gloss": "not", "confidence": 0.6, "morphology": "adverb"},
-  {"lemma": "et", "forms": ["et"], "gloss": "and", "confidence": 0.98, "morphology": "conjunction"},
-  {"lemma": "omnis", "forms": ["omnem", "omnes", "omnium", "omnibus", "omnia"], "gloss": "all; every", "confidence": 0.65, "morphology": "adjective"},
-  {"lemma": "paro", "forms": ["paras", "parat", "paramus", "paratis", "parant", "parare", "paravi", "paratum", "para"], "gloss": "to prepare", "confidence": 0.69, "morphology": "verb"},
-  {"lemma": "pax", "forms": ["pacis", "pacem", "pace", "paces", "pacum", "pacibus"], "gloss": "peace", "confidence": 0.68, "morphology": "noun feminine"},
-  {"lemma": "qui", "forms": ["quae", "quod", "quem", "quam", "cuius", "cui", "quo", "quos", "quas", "quorum", "quarum", "quibus", "quibuscum"], "gloss": "who; which", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "se", "forms": ["se", "sese", "sui", "sibi"], "gloss": "himself/herself/itself/themselves", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "si vis pacem para bellum", "forms": ["si vis pacem para bellum"], "gloss": "if you want peace, prepare for war", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "si", "forms": ["si"], "gloss": "if", "confidence": 0.98, "morphology": "conjunction"},
-  {"lemma": "per", "forms": ["per"], "gloss": "through; by", "confidence": 0.6, "morphology": "preposition"},
-  {"lemma": "per aspera ad astra", "forms": ["per aspera ad astra"], "gloss": "through hardships to the stars", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "spes", "forms": ["spei", "spem", "spe", "spes", "spes", "spibus"], "gloss": "hope", "confidence": 0.66, "morphology": "noun feminine"},
-  {"lemma": "sum", "forms": ["sum", "es", "est", "sumus", "estis", "sunt", "esse", "fui", "fueram", "fuerit", "eram", "erat", "erant"], "gloss": "to be", "confidence": 0.98, "morphology": "verb"},
-  {"lemma": "templum", "forms": ["templi", "templum", "templo", "templa", "templorum", "templis"], "gloss": "temple", "confidence": 0.98, "morphology": "noun neuter"},
-  {"lemma": "via", "forms": ["viam", "viae", "via", "viis"], "gloss": "way; road", "confidence": 0.68, "morphology": "noun feminine"},
-  {"lemma": "vir", "forms": ["viri", "virum", "viro", "viros"], "gloss": "man; husband", "confidence": 0.98, "morphology": "noun masculine"},
-  {"lemma": "puer", "forms": ["pueri", "puerum", "puero", "pueros", "puerorum", "pueris"], "gloss": "boy", "confidence": 0.98, "morphology": "noun masculine"},
-  {"lemma": "nos", "forms": ["nostri", "nostrum", "nobis"], "gloss": "we; us", "confidence": 0.98, "morphology": "pronoun"},
-  {"lemma": "cogito ergo sum", "forms": ["cogito ergo sum"], "gloss": "I think, therefore I am", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "vinco", "forms": ["vincis", "vincit", "vincimus", "vincitis", "vincunt", "vincere", "vici", "victum"], "gloss": "to conquer; overcome", "confidence": 0.7, "morphology": "verb"},
-  {"lemma": "amor vincit omnia", "forms": ["amor vincit omnia"], "gloss": "love conquers all", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "vis", "forms": ["vis", "vis", "vult", "volumus", "vultis", "volunt", "velle", "volo", "volui"], "gloss": "you want; desire", "confidence": 0.7, "morphology": "verb"},
-  {"lemma": "vita", "forms": ["vitae", "vitam", "vita", "vitas", "vitarum", "vitis"], "gloss": "life", "confidence": 0.67, "morphology": "noun feminine"},
-  {"lemma": "veritas liberabit vos", "forms": ["veritas liberabit vos"], "gloss": "the truth will set you free", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "veritas", "forms": ["veritas"], "gloss": "truth", "confidence": 0.99, "morphology": "noun feminine"},
-  {"lemma": "dum vita est spes est", "forms": ["dum vita est spes est"], "gloss": "while there is life, there is hope", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "veni vidi vici", "forms": ["veni vidi vici"], "gloss": "I came, I saw, I conquered", "confidence": 0.97, "morphology": "phrase"},
-  {"lemma": "volo", "forms": ["vis", "vult", "volumus", "vultis", "volunt", "velle", "volo", "volui"], "gloss": "to want; wish", "confidence": 0.7, "morphology": "verb"},
-  {"lemma": "vos", "forms": ["vobis", "vestri", "vestrum"], "gloss": "you (plural)", "confidence": 0.98, "morphology": "pronoun"}
+  {
+    "lemma": "ad",
+    "forms": [
+      "ad"
+    ],
+    "gloss": "to; toward",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "altus",
+    "forms": [
+      "alta",
+      "altum",
+      "alti",
+      "altae",
+      "alto",
+      "altam",
+      "altos",
+      "altas",
+      "altorum",
+      "altarum",
+      "altis"
+    ],
+    "gloss": "high; deep; tall",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "amicus",
+    "forms": [
+      "amici",
+      "amicum",
+      "amico",
+      "amicos",
+      "amicorum",
+      "amicis"
+    ],
+    "gloss": "friend",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "amo",
+    "forms": [
+      "amas",
+      "amat",
+      "amamus",
+      "amatis",
+      "amant",
+      "amare",
+      "amavi",
+      "amatum",
+      "amo"
+    ],
+    "gloss": "to love; like",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "amor",
+    "forms": [
+      "amoris",
+      "amorem",
+      "amore",
+      "amores",
+      "amorum",
+      "amoribus"
+    ],
+    "gloss": "love",
+    "confidence": 0.99,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "amor fati",
+    "forms": [
+      "amor fati"
+    ],
+    "gloss": "love of fate",
+    "confidence": 0.96,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "amor vincit omnia",
+    "forms": [
+      "amor vincit omnia"
+    ],
+    "gloss": "love conquers all",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "animus",
+    "forms": [
+      "animi",
+      "animo",
+      "animum",
+      "animos",
+      "animorum",
+      "animis",
+      "animo"
+    ],
+    "gloss": "mind; soul; spirit",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "annus",
+    "forms": [
+      "annum",
+      "anni",
+      "anno",
+      "annos",
+      "annorum",
+      "annis",
+      "annos"
+    ],
+    "gloss": "year",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "ante",
+    "forms": [
+      "ante"
+    ],
+    "gloss": "before; in front of",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "antiquus",
+    "forms": [
+      "antiqua",
+      "antiquum",
+      "antiqui",
+      "antiquae",
+      "antiquo",
+      "antiquam",
+      "antiquos",
+      "antiquas",
+      "antiquorum",
+      "antiquarum",
+      "antiquis"
+    ],
+    "gloss": "ancient; old",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "aqua",
+    "forms": [
+      "aquae",
+      "aquam",
+      "aqua",
+      "aquas",
+      "aquarum",
+      "aquis"
+    ],
+    "gloss": "water",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "arbor",
+    "forms": [
+      "arbor",
+      "arboris",
+      "arbori",
+      "arborem",
+      "arbore",
+      "arbores",
+      "arborum",
+      "arboribus"
+    ],
+    "gloss": "tree",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "arma",
+    "forms": [
+      "arma",
+      "armorum",
+      "armis"
+    ],
+    "gloss": "arms; weapons",
+    "confidence": 0.98,
+    "morphology": "noun neuter plural"
+  },
+  {
+    "lemma": "asper",
+    "forms": [
+      "aspera",
+      "asperum",
+      "aspera"
+    ],
+    "gloss": "rough; harsh; difficult",
+    "confidence": 0.59,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "astra",
+    "forms": [
+      "astrorum",
+      "astris"
+    ],
+    "gloss": "stars",
+    "confidence": 0.63,
+    "morphology": "noun neuter plural"
+  },
+  {
+    "lemma": "atque",
+    "forms": [
+      "atque",
+      "ac"
+    ],
+    "gloss": "and; and also",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "audio",
+    "forms": [
+      "audis",
+      "audit",
+      "audimus",
+      "auditis",
+      "audiunt",
+      "audire",
+      "audivi",
+      "auditum",
+      "audio"
+    ],
+    "gloss": "to hear; listen",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "aut",
+    "forms": [
+      "aut"
+    ],
+    "gloss": "or",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "aut inveniam viam aut faciam",
+    "forms": [
+      "aut inveniam viam aut faciam"
+    ],
+    "gloss": "I shall either find a way or make one",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "autem",
+    "forms": [
+      "autem"
+    ],
+    "gloss": "but; however; moreover",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "bellum",
+    "forms": [
+      "belli",
+      "bello",
+      "bella",
+      "bellorum",
+      "bellis"
+    ],
+    "gloss": "war",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "bonus",
+    "forms": [
+      "bona",
+      "bonum",
+      "boni",
+      "bonae",
+      "bono",
+      "bonam",
+      "bonos",
+      "bonas",
+      "bonorum",
+      "bonarum",
+      "bonis"
+    ],
+    "gloss": "good",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "capio",
+    "forms": [
+      "capis",
+      "capit",
+      "capimus",
+      "capitis",
+      "capiunt",
+      "capere",
+      "cepi",
+      "captum",
+      "capio"
+    ],
+    "gloss": "to take; capture; seize",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "caritas",
+    "forms": [
+      "caritatis",
+      "caritati",
+      "caritate",
+      "caritates",
+      "caritatum",
+      "caritatibus"
+    ],
+    "gloss": "love; charity",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "causa",
+    "forms": [
+      "causae",
+      "causam",
+      "causa",
+      "causas",
+      "causarum",
+      "causis"
+    ],
+    "gloss": "cause; reason",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "cogito",
+    "forms": [
+      "cogitas",
+      "cogitat",
+      "cogitamus",
+      "cogitatis",
+      "cogitant",
+      "cogitare",
+      "cogitavi",
+      "cogitatum"
+    ],
+    "gloss": "to think",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "cogito ergo sum",
+    "forms": [
+      "cogito ergo sum"
+    ],
+    "gloss": "I think, therefore I am",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "corpus",
+    "forms": [
+      "corporis",
+      "corpori",
+      "corpus",
+      "corpore",
+      "corpora",
+      "corporum",
+      "corporibus"
+    ],
+    "gloss": "body",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "cum",
+    "forms": [
+      "cum"
+    ],
+    "gloss": "with",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "cur",
+    "forms": [
+      "cur"
+    ],
+    "gloss": "why",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "de",
+    "forms": [
+      "de"
+    ],
+    "gloss": "from; about; concerning",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "dico",
+    "forms": [
+      "dico",
+      "dicis",
+      "dicit",
+      "dicimus",
+      "dicitis",
+      "dicunt",
+      "dicere",
+      "dixi",
+      "dictum",
+      "dic"
+    ],
+    "gloss": "to say; speak; tell",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "difficilis",
+    "forms": [
+      "difficile",
+      "difficilis",
+      "difficilem",
+      "difficili",
+      "difficiles",
+      "difficilium",
+      "difficilibus",
+      "difficilior"
+    ],
+    "gloss": "difficult; hard",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "do",
+    "forms": [
+      "do",
+      "das",
+      "dat",
+      "damus",
+      "datis",
+      "dant",
+      "dare",
+      "dedi",
+      "datum"
+    ],
+    "gloss": "to give",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "domus",
+    "forms": [
+      "domus",
+      "domum",
+      "domui",
+      "domo",
+      "domuum",
+      "domibus"
+    ],
+    "gloss": "house; home",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "duco",
+    "forms": [
+      "ducis",
+      "ducit",
+      "ducimus",
+      "ducitis",
+      "ducunt",
+      "ducere",
+      "duxi",
+      "ductum",
+      "ducor",
+      "duceris",
+      "ducitur",
+      "ducimur",
+      "ducimini",
+      "ducuntur"
+    ],
+    "gloss": "to lead; guide",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "dum",
+    "forms": [
+      "dum"
+    ],
+    "gloss": "while; until",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "dum vita est spes est",
+    "forms": [
+      "dum vita est spes est"
+    ],
+    "gloss": "while there is life, there is hope",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "ego",
+    "forms": [
+      "ego",
+      "me",
+      "mei",
+      "mihi"
+    ],
+    "gloss": "I; me",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "ergo",
+    "forms": [
+      "ergo"
+    ],
+    "gloss": "therefore",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "et",
+    "forms": [
+      "et"
+    ],
+    "gloss": "and",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "ex",
+    "forms": [
+      "ex",
+      "e"
+    ],
+    "gloss": "from; out of",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "facio",
+    "forms": [
+      "facis",
+      "facit",
+      "facimus",
+      "facitis",
+      "faciunt",
+      "facere",
+      "feci",
+      "factum",
+      "faciam",
+      "faciat",
+      "faciant"
+    ],
+    "gloss": "to do; make",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "femina",
+    "forms": [
+      "feminae",
+      "feminam",
+      "femina",
+      "feminas",
+      "feminarum",
+      "feminis"
+    ],
+    "gloss": "woman",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "filia",
+    "forms": [
+      "filiae",
+      "filiam",
+      "filia",
+      "filias",
+      "filiarum",
+      "filiis"
+    ],
+    "gloss": "daughter",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "filius",
+    "forms": [
+      "filii",
+      "filio",
+      "filium",
+      "filios",
+      "filiorum",
+      "filiis"
+    ],
+    "gloss": "son",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "fons",
+    "forms": [
+      "fontis",
+      "fontem",
+      "fonte",
+      "fontes",
+      "fontium",
+      "fontibus"
+    ],
+    "gloss": "spring; fountain; source",
+    "confidence": 0.64,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "fons vitae caritas",
+    "forms": [
+      "fons vitae caritas"
+    ],
+    "gloss": "love is the fountain of life",
+    "confidence": 0.96,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "forum",
+    "forms": [
+      "fori",
+      "foro",
+      "forum",
+      "fora",
+      "fororum",
+      "foris"
+    ],
+    "gloss": "marketplace; forum",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "fugio",
+    "forms": [
+      "fugis",
+      "fugit",
+      "fugimus",
+      "fugitis",
+      "fugiunt",
+      "fugere",
+      "fugi",
+      "fugitum",
+      "fugerunt",
+      "fugit"
+    ],
+    "gloss": "to flee; run away",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "habeo",
+    "forms": [
+      "habes",
+      "habet",
+      "habemus",
+      "habetis",
+      "habent",
+      "habere",
+      "habui",
+      "habitum",
+      "habeo"
+    ],
+    "gloss": "to have; hold",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "hic",
+    "forms": [
+      "hec",
+      "haec",
+      "hoc",
+      "hunc",
+      "hanc",
+      "huius",
+      "huic",
+      "hac",
+      "hi",
+      "he",
+      "hos",
+      "has",
+      "horum",
+      "harum",
+      "his",
+      "hiis"
+    ],
+    "gloss": "this; he/she/it",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "iam",
+    "forms": [
+      "iam"
+    ],
+    "gloss": "already; now",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "idem",
+    "forms": [
+      "eadem",
+      "eundem",
+      "eandem",
+      "eiusdem",
+      "eidem",
+      "eodem",
+      "iidem",
+      "eaedem",
+      "eedem",
+      "eosdem",
+      "easdem",
+      "eorundem",
+      "earumdem",
+      "eisdem",
+      "iisdem"
+    ],
+    "gloss": "the same",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "ille",
+    "forms": [
+      "illa",
+      "illud",
+      "illum",
+      "illam",
+      "illius",
+      "illi",
+      "illo",
+      "illos",
+      "illas",
+      "illorum",
+      "illis"
+    ],
+    "gloss": "that; he/she/it",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "in",
+    "forms": [
+      "in"
+    ],
+    "gloss": "in; on; into",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "initium",
+    "forms": [
+      "initii",
+      "initio",
+      "initium",
+      "initia",
+      "initiorum",
+      "initiis"
+    ],
+    "gloss": "beginning; start",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "inter",
+    "forms": [
+      "inter"
+    ],
+    "gloss": "between; among",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "invenio",
+    "forms": [
+      "invenis",
+      "invenit",
+      "invenimus",
+      "invenitis",
+      "inveniunt",
+      "invenire",
+      "inveni",
+      "inventum",
+      "inveniam",
+      "inveniat",
+      "inveniant"
+    ],
+    "gloss": "to find; discover",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "ipse",
+    "forms": [
+      "ipsa",
+      "ipsum",
+      "ipsam",
+      "ipsius",
+      "ipsi",
+      "ipso",
+      "ipsos",
+      "ipsas",
+      "ipsorum",
+      "ipsarum",
+      "ipsis"
+    ],
+    "gloss": "self; himself/herself/itself",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "is",
+    "forms": [
+      "ea",
+      "id",
+      "eius",
+      "ei",
+      "eum",
+      "eam",
+      "ii",
+      "ei",
+      "ea",
+      "eos",
+      "eas",
+      "eorum",
+      "earum",
+      "eis",
+      "iis"
+    ],
+    "gloss": "he/she/it; that",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "iste",
+    "forms": [
+      "ista",
+      "istud",
+      "istum",
+      "istam",
+      "istius",
+      "isti",
+      "isto",
+      "istos",
+      "istas",
+      "istorum",
+      "istarum",
+      "istis"
+    ],
+    "gloss": "that (near you)",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "laboro",
+    "forms": [
+      "laboras",
+      "laborat",
+      "laboramus",
+      "laboratis",
+      "laborant",
+      "laborare",
+      "laboravi",
+      "laboratum",
+      "laboro"
+    ],
+    "gloss": "to work; toil; struggle",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "laus",
+    "forms": [
+      "laudis",
+      "laudi",
+      "laudem",
+      "laude",
+      "laudes",
+      "laudium",
+      "laudibus"
+    ],
+    "gloss": "praise; glory",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "liber",
+    "forms": [
+      "libri",
+      "librum",
+      "libro",
+      "libros",
+      "librorum",
+      "libris"
+    ],
+    "gloss": "book",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "libero",
+    "forms": [
+      "liberabit",
+      "liberabis",
+      "liberabit",
+      "liberabimus",
+      "liberabitis",
+      "liberabunt",
+      "liberare",
+      "liberavi",
+      "liberatum"
+    ],
+    "gloss": "to free; set free",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "locus",
+    "forms": [
+      "loci",
+      "locum",
+      "loco",
+      "locos",
+      "locorum",
+      "locis"
+    ],
+    "gloss": "place",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "loquor",
+    "forms": [
+      "loqueris",
+      "loquitur",
+      "loquimur",
+      "loquimini",
+      "loquuntur",
+      "loqui",
+      "locutus"
+    ],
+    "gloss": "to speak; talk",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "magnus",
+    "forms": [
+      "magna",
+      "magnum",
+      "magni",
+      "magnae",
+      "magno",
+      "magnam",
+      "magnum",
+      "magni",
+      "magnae",
+      "magna",
+      "magnorum",
+      "magnarum",
+      "magnis"
+    ],
+    "gloss": "great; large",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "malus",
+    "forms": [
+      "mala",
+      "malum",
+      "mali",
+      "malae",
+      "malo",
+      "malam",
+      "malos",
+      "malas",
+      "malorum",
+      "malarum",
+      "malis"
+    ],
+    "gloss": "bad; evil",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "maneo",
+    "forms": [
+      "maneo",
+      "manes",
+      "manet",
+      "manemus",
+      "manetis",
+      "manent",
+      "manere",
+      "mansi",
+      "mansum"
+    ],
+    "gloss": "to remain",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "mater",
+    "forms": [
+      "matris",
+      "matri",
+      "matrem",
+      "matre",
+      "matres",
+      "matrum",
+      "matribus"
+    ],
+    "gloss": "mother",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "memoria",
+    "forms": [
+      "memoriae",
+      "memoriam",
+      "memoria",
+      "memorias",
+      "memoriarum",
+      "memoriis"
+    ],
+    "gloss": "memory",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "mensa",
+    "forms": [
+      "mensae",
+      "mensam",
+      "mensa",
+      "mensas",
+      "mensarum",
+      "mensis"
+    ],
+    "gloss": "table",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "meridies",
+    "forms": [
+      "meridiei",
+      "meridiem",
+      "meridie"
+    ],
+    "gloss": "midday; noon; south",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "mitto",
+    "forms": [
+      "mittis",
+      "mittit",
+      "mittimus",
+      "mittitis",
+      "mittunt",
+      "mittere",
+      "misi",
+      "missum",
+      "mitto"
+    ],
+    "gloss": "to send; let go",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "mora",
+    "forms": [
+      "morae",
+      "moram",
+      "mora",
+      "moras",
+      "morarum",
+      "moris"
+    ],
+    "gloss": "delay",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "multus",
+    "forms": [
+      "multa",
+      "multum",
+      "multi",
+      "multae",
+      "multo",
+      "multam",
+      "multos",
+      "multas",
+      "multorum",
+      "multarum",
+      "multis",
+      "multos"
+    ],
+    "gloss": "much; many",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "nam",
+    "forms": [
+      "nam",
+      "namque"
+    ],
+    "gloss": "for; because",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "neque",
+    "forms": [
+      "neque",
+      "nec"
+    ],
+    "gloss": "and not; nor",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "nomen",
+    "forms": [
+      "nominis",
+      "nomini",
+      "nomen",
+      "nominum",
+      "nominibus",
+      "nomina"
+    ],
+    "gloss": "name",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "non",
+    "forms": [
+      "non"
+    ],
+    "gloss": "not",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "non ducor duco",
+    "forms": [
+      "non ducor duco"
+    ],
+    "gloss": "I am not led, I lead",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "nos",
+    "forms": [
+      "nostri",
+      "nostrum",
+      "nobis"
+    ],
+    "gloss": "we; us",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "novus",
+    "forms": [
+      "nova",
+      "novum",
+      "novi",
+      "novae",
+      "novo",
+      "novam",
+      "novos",
+      "novas",
+      "novorum",
+      "novarum",
+      "novis"
+    ],
+    "gloss": "new",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "numquam",
+    "forms": [
+      "numquam",
+      "nunquam"
+    ],
+    "gloss": "never",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "nunc",
+    "forms": [
+      "nunc"
+    ],
+    "gloss": "now",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "omnis",
+    "forms": [
+      "omnis",
+      "omne",
+      "omnem",
+      "omnes",
+      "omnium",
+      "omnibus",
+      "omnia",
+      "omne"
+    ],
+    "gloss": "all; every",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "paro",
+    "forms": [
+      "paras",
+      "parat",
+      "paramus",
+      "paratis",
+      "parant",
+      "parare",
+      "paravi",
+      "paratum",
+      "para"
+    ],
+    "gloss": "to prepare",
+    "confidence": 0.69,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "parvus",
+    "forms": [
+      "parva",
+      "parvum",
+      "parvi",
+      "parvae",
+      "parvo",
+      "parvam",
+      "parvos",
+      "parvas",
+      "parvorum",
+      "parvarum",
+      "parvis"
+    ],
+    "gloss": "small; little",
+    "confidence": 0.98,
+    "morphology": "adjective"
+  },
+  {
+    "lemma": "pater",
+    "forms": [
+      "patris",
+      "patri",
+      "patrem",
+      "patre",
+      "patres",
+      "patrum",
+      "patribus"
+    ],
+    "gloss": "father",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "pax",
+    "forms": [
+      "pax",
+      "pacis",
+      "pacem",
+      "pace",
+      "paces",
+      "pacum",
+      "pacibus"
+    ],
+    "gloss": "peace",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "per",
+    "forms": [
+      "per"
+    ],
+    "gloss": "through; by",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "per aspera ad astra",
+    "forms": [
+      "per aspera ad astra"
+    ],
+    "gloss": "through hardships to the stars",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "porta",
+    "forms": [
+      "portae",
+      "portam",
+      "porta",
+      "portas",
+      "portarum",
+      "portis"
+    ],
+    "gloss": "gate; door",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "porto",
+    "forms": [
+      "portas",
+      "portat",
+      "portamus",
+      "portatis",
+      "portant",
+      "portare",
+      "portavi",
+      "portatum",
+      "porto"
+    ],
+    "gloss": "to carry; bear",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "possum",
+    "forms": [
+      "potes",
+      "potest",
+      "possumus",
+      "potestis",
+      "possunt",
+      "posse",
+      "potui",
+      "possum",
+      "potest"
+    ],
+    "gloss": "to be able; can",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "post",
+    "forms": [
+      "post"
+    ],
+    "gloss": "after; behind",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "propter",
+    "forms": [
+      "propter"
+    ],
+    "gloss": "because of; on account of",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "puer",
+    "forms": [
+      "pueri",
+      "puerum",
+      "puero",
+      "pueros",
+      "puerorum",
+      "pueris"
+    ],
+    "gloss": "boy",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "pugno",
+    "forms": [
+      "pugnas",
+      "pugnat",
+      "pugnamus",
+      "pugnatis",
+      "pugnant",
+      "pugnare",
+      "pugnavi",
+      "pugnatum",
+      "pugno"
+    ],
+    "gloss": "to fight",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "quaero",
+    "forms": [
+      "quaeris",
+      "quaerit",
+      "quaerimus",
+      "quaeritis",
+      "quaerunt",
+      "quaerere",
+      "quaesivi",
+      "quaesitum",
+      "quaerimus"
+    ],
+    "gloss": "to seek; ask; inquire",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "qui",
+    "forms": [
+      "quae",
+      "quod",
+      "quem",
+      "quam",
+      "cuius",
+      "cui",
+      "quo",
+      "quos",
+      "quas",
+      "quorum",
+      "quarum",
+      "quibus",
+      "quibuscum"
+    ],
+    "gloss": "who; which",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "quis",
+    "forms": [
+      "quis",
+      "quid",
+      "cuius",
+      "cui",
+      "quem",
+      "quod",
+      "quos",
+      "quae"
+    ],
+    "gloss": "who? what?",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "quomodo",
+    "forms": [
+      "quomodo"
+    ],
+    "gloss": "how; in what way",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "regno",
+    "forms": [
+      "regnas",
+      "regnat",
+      "regnamus",
+      "regnatis",
+      "regnant",
+      "regnare",
+      "regnavi",
+      "regnatum",
+      "regnavit"
+    ],
+    "gloss": "to reign; rule",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "rex",
+    "forms": [
+      "regis",
+      "regi",
+      "regem",
+      "rege",
+      "reges",
+      "regum",
+      "regibus"
+    ],
+    "gloss": "king",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "saepe",
+    "forms": [
+      "saepe"
+    ],
+    "gloss": "often",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "scribo",
+    "forms": [
+      "scribis",
+      "scribit",
+      "scribimus",
+      "scribitis",
+      "scribunt",
+      "scribere",
+      "scripsi",
+      "scriptum",
+      "scribo"
+    ],
+    "gloss": "to write",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "se",
+    "forms": [
+      "se",
+      "sese",
+      "sui",
+      "sibi"
+    ],
+    "gloss": "himself/herself/itself/themselves",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "sed",
+    "forms": [
+      "sed"
+    ],
+    "gloss": "but",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "sedeo",
+    "forms": [
+      "sedes",
+      "sedet",
+      "sedemus",
+      "sedetis",
+      "sedent",
+      "sedere",
+      "sedi",
+      "sessum",
+      "sedebant",
+      "sedebat",
+      "sedeo"
+    ],
+    "gloss": "to sit; remain",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "semper",
+    "forms": [
+      "semper"
+    ],
+    "gloss": "always",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "si",
+    "forms": [
+      "si"
+    ],
+    "gloss": "if",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "si vis pacem para bellum",
+    "forms": [
+      "si vis pacem para bellum"
+    ],
+    "gloss": "if you want peace, prepare for war",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "sine",
+    "forms": [
+      "sine"
+    ],
+    "gloss": "without",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "spes",
+    "forms": [
+      "spes",
+      "spei",
+      "spem",
+      "spe",
+      "spibus"
+    ],
+    "gloss": "hope",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "sub",
+    "forms": [
+      "sub"
+    ],
+    "gloss": "under; beneath",
+    "confidence": 0.98,
+    "morphology": "preposition"
+  },
+  {
+    "lemma": "sum",
+    "forms": [
+      "sum",
+      "es",
+      "est",
+      "sumus",
+      "estis",
+      "sunt",
+      "esse",
+      "fui",
+      "fueram",
+      "fuerit",
+      "eram",
+      "erat",
+      "erant"
+    ],
+    "gloss": "to be",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "tamen",
+    "forms": [
+      "tamen"
+    ],
+    "gloss": "however; nevertheless",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "templum",
+    "forms": [
+      "templi",
+      "templum",
+      "templo",
+      "templa",
+      "templorum",
+      "templis"
+    ],
+    "gloss": "temple",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "terra",
+    "forms": [
+      "terrae",
+      "terram",
+      "terra",
+      "terras",
+      "terrarum",
+      "terris"
+    ],
+    "gloss": "land; earth",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "timeo",
+    "forms": [
+      "times",
+      "timet",
+      "timemus",
+      "timetis",
+      "timent",
+      "timere",
+      "timui",
+      "timeo"
+    ],
+    "gloss": "to fear; be afraid",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "timor",
+    "forms": [
+      "timoris",
+      "timori",
+      "timorem",
+      "timore",
+      "timores",
+      "timorum",
+      "timoribus"
+    ],
+    "gloss": "fear; dread",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "tu",
+    "forms": [
+      "tu",
+      "te",
+      "tui",
+      "tibi"
+    ],
+    "gloss": "you (singular)",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  },
+  {
+    "lemma": "ubi",
+    "forms": [
+      "ubi"
+    ],
+    "gloss": "where; when",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
+    "lemma": "ut",
+    "forms": [
+      "ut",
+      "uti"
+    ],
+    "gloss": "that; so that; as; when",
+    "confidence": 0.98,
+    "morphology": "conjunction"
+  },
+  {
+    "lemma": "veni vidi vici",
+    "forms": [
+      "veni vidi vici"
+    ],
+    "gloss": "I came, I saw, I conquered",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "venio",
+    "forms": [
+      "venio",
+      "venis",
+      "venit",
+      "venimus",
+      "venitis",
+      "veniunt",
+      "venire",
+      "veni",
+      "ventum",
+      "venistis",
+      "venite"
+    ],
+    "gloss": "to come",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "veritas",
+    "forms": [
+      "veritas",
+      "veritatis",
+      "veritati",
+      "veritatem",
+      "veritate",
+      "veritates",
+      "veritatum",
+      "veritatibus"
+    ],
+    "gloss": "truth",
+    "confidence": 0.99,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "veritas liberabit vos",
+    "forms": [
+      "veritas liberabit vos"
+    ],
+    "gloss": "the truth will set you free",
+    "confidence": 0.97,
+    "morphology": "phrase"
+  },
+  {
+    "lemma": "via",
+    "forms": [
+      "via",
+      "viam",
+      "viae",
+      "vias",
+      "viarum",
+      "viis"
+    ],
+    "gloss": "way; road",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "video",
+    "forms": [
+      "vides",
+      "videt",
+      "videmus",
+      "videtis",
+      "vident",
+      "videre",
+      "vidi",
+      "visum",
+      "video",
+      "vide"
+    ],
+    "gloss": "to see",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "vinco",
+    "forms": [
+      "vincis",
+      "vincit",
+      "vincimus",
+      "vincitis",
+      "vincunt",
+      "vincere",
+      "vici",
+      "victum"
+    ],
+    "gloss": "to conquer; overcome",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "vir",
+    "forms": [
+      "viri",
+      "virum",
+      "viro",
+      "viros"
+    ],
+    "gloss": "man; husband",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "vis",
+    "forms": [
+      "vis",
+      "vis",
+      "vult",
+      "volumus",
+      "vultis",
+      "volunt",
+      "velle",
+      "volo",
+      "volui"
+    ],
+    "gloss": "you want; desire",
+    "confidence": 0.7,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "vita",
+    "forms": [
+      "vitae",
+      "vitam",
+      "vita",
+      "vitas",
+      "vitarum",
+      "vitis"
+    ],
+    "gloss": "life",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
+    "lemma": "volo",
+    "forms": [
+      "vis",
+      "vult",
+      "volumus",
+      "vultis",
+      "volunt",
+      "velle",
+      "volo",
+      "volui"
+    ],
+    "gloss": "to want; wish",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "vos",
+    "forms": [
+      "vobis",
+      "vestri",
+      "vestrum"
+    ],
+    "gloss": "you (plural)",
+    "confidence": 0.98,
+    "morphology": "pronoun"
+  }
 ]
