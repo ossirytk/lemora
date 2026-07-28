@@ -135,6 +135,20 @@
     "morphology": "verb"
   },
   {
+    "lemma": "agricola",
+    "forms": [
+      "agricolae",
+      "agricolam",
+      "agricola",
+      "agricolas",
+      "agricolarum",
+      "agricolis"
+    ],
+    "gloss": "farmer; agriculturist",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "alius",
     "forms": [
       "alia",
@@ -442,6 +456,8 @@
       "auditis",
       "auditum",
       "audiunt",
+      "audiverant",
+      "audiverat",
       "audiverunt",
       "audivi",
       "audivit"
@@ -678,7 +694,7 @@
       "celeriter"
     ],
     "gloss": "quickly; swiftly",
-    "confidence": 0.98,
+    "confidence": 0.99,
     "morphology": "adverb"
   },
   {
@@ -742,6 +758,15 @@
     "gloss": "to shout; call out",
     "confidence": 0.98,
     "morphology": "verb"
+  },
+  {
+    "lemma": "clare",
+    "forms": [
+      "clare"
+    ],
+    "gloss": "clearly; brightly; famously",
+    "confidence": 0.98,
+    "morphology": "adverb"
   },
   {
     "lemma": "clarus",
@@ -884,6 +909,20 @@
     "morphology": "adverb"
   },
   {
+    "lemma": "curia",
+    "forms": [
+      "curiae",
+      "curiam",
+      "curia",
+      "curias",
+      "curiarum",
+      "curiis"
+    ],
+    "gloss": "senate house; assembly hall; curia",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "curro",
     "forms": [
       "cucurrerunt",
@@ -1013,6 +1052,9 @@
       "dico",
       "dictum",
       "dicunt",
+      "dixeram",
+      "dixerant",
+      "dixerat",
       "dixerunt",
       "dixi",
       "dixit"
@@ -1038,6 +1080,15 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "diligenter",
+    "forms": [
+      "diligenter"
+    ],
+    "gloss": "carefully; diligently",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
     "lemma": "discipulus",
     "forms": [
       "discipuli",
@@ -1054,8 +1105,12 @@
   {
     "lemma": "disco",
     "forms": [
+      "didiceram",
+      "didicerant",
+      "didicerat",
       "didicerunt",
       "didici",
+      "didicisse",
       "didicit",
       "discebant",
       "discebat",
@@ -1100,6 +1155,9 @@
       "datos",
       "datum",
       "datus",
+      "dederam",
+      "dederant",
+      "dederat",
       "dederunt",
       "dedi",
       "dedit",
@@ -1199,6 +1257,9 @@
       "ductus",
       "ducunt",
       "ducuntur",
+      "duxeram",
+      "duxerant",
+      "duxerat",
       "duxerunt",
       "duxi",
       "duxit"
@@ -1389,6 +1450,9 @@
       "factos",
       "factum",
       "factus",
+      "feceram",
+      "fecerant",
+      "fecerat",
       "fecerunt",
       "feci",
       "fecit"
@@ -1584,6 +1648,15 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "fortiter",
+    "forms": [
+      "fortiter"
+    ],
+    "gloss": "bravely; strongly; boldly",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
     "lemma": "fortuna",
     "forms": [
       "fortunae",
@@ -1759,6 +1832,15 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "graviter",
+    "forms": [
+      "graviter"
+    ],
+    "gloss": "heavily; seriously; severely",
+    "confidence": 0.98,
+    "morphology": "adverb"
+  },
+  {
     "lemma": "guberno",
     "forms": [
       "gubernas",
@@ -1791,6 +1873,9 @@
       "habet",
       "habetis",
       "habitum",
+      "habueram",
+      "habuerant",
+      "habuerat",
       "habui",
       "habuit"
     ],
@@ -1870,6 +1955,21 @@
       "hominibus"
     ],
     "gloss": "man; human being; person",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "honor",
+    "forms": [
+      "honoris",
+      "honori",
+      "honorem",
+      "honore",
+      "honores",
+      "honorum",
+      "honoribus"
+    ],
+    "gloss": "honour; respect; glory; office",
     "confidence": 0.98,
     "morphology": "noun masculine"
   },
@@ -2013,6 +2113,27 @@
     "gloss": "command; power; empire",
     "confidence": 0.98,
     "morphology": "noun neuter"
+  },
+  {
+    "lemma": "impero",
+    "forms": [
+      "imperas",
+      "imperat",
+      "imperamus",
+      "imperatis",
+      "imperant",
+      "imperare",
+      "imperavi",
+      "imperatum",
+      "impero",
+      "imperavit",
+      "imperaverant",
+      "imperaverat",
+      "imperaret"
+    ],
+    "gloss": "to command; order; rule over",
+    "confidence": 0.98,
+    "morphology": "verb"
   },
   {
     "lemma": "in",
@@ -2262,6 +2383,42 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "iuvenis",
+    "forms": [
+      "iuvenis",
+      "iuveni",
+      "iuvenem",
+      "iuvene",
+      "iuvenes",
+      "iuvenum",
+      "iuvenibus"
+    ],
+    "gloss": "young man; youth",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "iuvo",
+    "forms": [
+      "iuvas",
+      "iuvat",
+      "iuvamus",
+      "iuvatis",
+      "iuvant",
+      "iuvare",
+      "iuvi",
+      "iutum",
+      "iuvo",
+      "iuvit",
+      "iuverunt",
+      "iuvabat",
+      "iuvabant"
+    ],
+    "gloss": "to help; aid; please; delight",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "labor",
     "forms": [
       "laboris",
@@ -2275,6 +2432,15 @@
     "gloss": "work; toil; hardship",
     "confidence": 0.98,
     "morphology": "noun masculine"
+  },
+  {
+    "lemma": "laboriose",
+    "forms": [
+      "laboriose"
+    ],
+    "gloss": "laboriously; with effort",
+    "confidence": 0.98,
+    "morphology": "adverb"
   },
   {
     "lemma": "laboro",
@@ -2403,6 +2569,8 @@
       "legebam",
       "legebant",
       "legebat",
+      "legerant",
+      "legerat",
       "legere",
       "legerunt",
       "legi",
@@ -2431,6 +2599,15 @@
     "gloss": "law",
     "confidence": 0.98,
     "morphology": "noun feminine"
+  },
+  {
+    "lemma": "libenter",
+    "forms": [
+      "libenter"
+    ],
+    "gloss": "gladly; willingly",
+    "confidence": 0.98,
+    "morphology": "adverb"
   },
   {
     "lemma": "liber",
@@ -2684,6 +2861,8 @@
       "manes",
       "manet",
       "manetis",
+      "manserant",
+      "manserat",
       "manserunt",
       "mansi",
       "mansit",
@@ -2815,6 +2994,9 @@
   {
     "lemma": "mitto",
     "forms": [
+      "miseram",
+      "miserant",
+      "miserat",
       "miserunt",
       "misi",
       "misit",
@@ -3023,6 +3205,23 @@
       "narro"
     ],
     "gloss": "to tell; narrate; relate",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "nato",
+    "forms": [
+      "natas",
+      "natat",
+      "natamus",
+      "natatis",
+      "natant",
+      "natare",
+      "natavi",
+      "natatum",
+      "nato"
+    ],
+    "gloss": "to swim; float",
     "confidence": 0.98,
     "morphology": "verb"
   },
@@ -3785,6 +3984,9 @@
       "potes",
       "potest",
       "potestis",
+      "potueram",
+      "potuerant",
+      "potuerat",
       "potui"
     ],
     "gloss": "to be able; can",
@@ -3913,6 +4115,8 @@
       "pugnat",
       "pugnatis",
       "pugnatum",
+      "pugnaverant",
+      "pugnaverat",
       "pugnaverunt",
       "pugnavi",
       "pugnavit",
@@ -4354,6 +4558,8 @@
       "scribitis",
       "scribo",
       "scribunt",
+      "scripserant",
+      "scripserat",
       "scripserunt",
       "scripsi",
       "scripsit",
@@ -4418,6 +4624,21 @@
     "gloss": "always",
     "confidence": 0.98,
     "morphology": "adverb"
+  },
+  {
+    "lemma": "senator",
+    "forms": [
+      "senatoris",
+      "senatori",
+      "senatorem",
+      "senatore",
+      "senatores",
+      "senatorum",
+      "senatoribus"
+    ],
+    "gloss": "senator",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
   },
   {
     "lemma": "senatus",
@@ -4720,7 +4941,11 @@
       "est",
       "estis",
       "fueram",
+      "fueramus",
+      "fuerant",
+      "fuerat",
       "fuerit",
+      "fueritis",
       "fui",
       "sum",
       "sumus",
@@ -4929,6 +5154,26 @@
     "morphology": "preposition"
   },
   {
+    "lemma": "transeo",
+    "forms": [
+      "transis",
+      "transit",
+      "transimus",
+      "transitis",
+      "transeunt",
+      "transire",
+      "transii",
+      "transitum",
+      "transeo",
+      "transiret",
+      "transiit",
+      "transibat"
+    ],
+    "gloss": "to cross; go across; pass over",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "tu",
     "forms": [
       "tu",
@@ -5024,6 +5269,9 @@
   {
     "lemma": "venio",
     "forms": [
+      "veneram",
+      "venerant",
+      "venerat",
       "venerunt",
       "veni",
       "veniebam",
@@ -5149,6 +5397,9 @@
       "videmus",
       "vident",
       "video",
+      "videram",
+      "viderant",
+      "viderat",
       "videre",
       "viderunt",
       "vides",
