@@ -44,6 +44,8 @@
   {
     "lemma": "aedifico",
     "forms": [
+      "aedificabant",
+      "aedificabat",
       "aedificamus",
       "aedificant",
       "aedificare",
@@ -113,17 +115,20 @@
   {
     "lemma": "ago",
     "forms": [
+      "actum",
+      "agebam",
+      "agebant",
+      "agebat",
+      "agere",
+      "agimus",
       "agis",
       "agit",
-      "agimus",
       "agitis",
-      "agunt",
-      "agere",
-      "egi",
-      "actum",
       "ago",
-      "egit",
-      "egerunt"
+      "agunt",
+      "egerunt",
+      "egi",
+      "egit"
     ],
     "gloss": "to do; drive; act; lead",
     "confidence": 0.98,
@@ -171,6 +176,9 @@
   {
     "lemma": "ambulo",
     "forms": [
+      "ambulabam",
+      "ambulabant",
+      "ambulabat",
       "ambulamus",
       "ambulant",
       "ambulare",
@@ -204,6 +212,9 @@
   {
     "lemma": "amo",
     "forms": [
+      "amabam",
+      "amabant",
+      "amabat",
       "amamus",
       "amant",
       "amare",
@@ -420,6 +431,9 @@
   {
     "lemma": "audio",
     "forms": [
+      "audiebam",
+      "audiebant",
+      "audiebat",
       "audimus",
       "audio",
       "audire",
@@ -462,6 +476,20 @@
     "gloss": "but; however; moreover",
     "confidence": 0.98,
     "morphology": "conjunction"
+  },
+  {
+    "lemma": "auxilium",
+    "forms": [
+      "auxilii",
+      "auxilio",
+      "auxilium",
+      "auxilia",
+      "auxiliorum",
+      "auxiliis"
+    ],
+    "gloss": "help; aid; assistance",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
   },
   {
     "lemma": "bellator",
@@ -559,6 +587,8 @@
     "lemma": "capio",
     "forms": [
       "capere",
+      "capiebant",
+      "capiebat",
       "capimus",
       "capio",
       "capis",
@@ -677,8 +707,26 @@
     "morphology": "noun masculine/feminine"
   },
   {
+    "lemma": "clades",
+    "forms": [
+      "cladis",
+      "cladi",
+      "cladem",
+      "clade",
+      "clades",
+      "cladium",
+      "cladibus"
+    ],
+    "gloss": "disaster; defeat; destruction",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "clamo",
     "forms": [
+      "clamabam",
+      "clamabant",
+      "clamabat",
       "clamamus",
       "clamant",
       "clamare",
@@ -717,6 +765,9 @@
   {
     "lemma": "cogito",
     "forms": [
+      "cogitabam",
+      "cogitabant",
+      "cogitabat",
       "cogitamus",
       "cogitant",
       "cogitare",
@@ -740,6 +791,21 @@
     "gloss": "I think, therefore I am",
     "confidence": 0.97,
     "morphology": "phrase"
+  },
+  {
+    "lemma": "comes",
+    "forms": [
+      "comitis",
+      "comiti",
+      "comitem",
+      "comite",
+      "comites",
+      "comitum",
+      "comitibus"
+    ],
+    "gloss": "companion; comrade; follower",
+    "confidence": 0.98,
+    "morphology": "noun masculine/feminine"
   },
   {
     "lemma": "consilium",
@@ -782,16 +848,18 @@
   {
     "lemma": "credo",
     "forms": [
-      "credis",
-      "credit",
-      "credimus",
-      "creditis",
-      "credunt",
+      "credebant",
+      "credebat",
       "credere",
       "credidi",
+      "credidit",
+      "credimus",
+      "credis",
+      "credit",
+      "creditis",
       "creditum",
       "credo",
-      "credidit"
+      "credunt"
     ],
     "gloss": "to believe; trust; entrust",
     "confidence": 0.98,
@@ -821,6 +889,9 @@
       "cucurrerunt",
       "cucurri",
       "cucurrit",
+      "currebam",
+      "currebant",
+      "currebat",
       "currere",
       "currimus",
       "curris",
@@ -875,6 +946,9 @@
   {
     "lemma": "debeo",
     "forms": [
+      "debebam",
+      "debebant",
+      "debebat",
       "debemus",
       "debent",
       "debeo",
@@ -928,6 +1002,9 @@
     "lemma": "dico",
     "forms": [
       "dic",
+      "dicebam",
+      "dicebant",
+      "dicebat",
       "dicere",
       "dicimus",
       "dicis",
@@ -980,6 +1057,8 @@
       "didicerunt",
       "didici",
       "didicit",
+      "discebant",
+      "discebat",
       "discere",
       "discimus",
       "discis",
@@ -992,6 +1071,18 @@
     "gloss": "to learn",
     "confidence": 0.98,
     "morphology": "verb"
+  },
+  {
+    "lemma": "divitiae",
+    "forms": [
+      "divitiarum",
+      "divitiis",
+      "divitias",
+      "divitiis"
+    ],
+    "gloss": "riches; wealth",
+    "confidence": 0.98,
+    "morphology": "noun feminine plural"
   },
   {
     "lemma": "do",
@@ -1021,6 +1112,9 @@
   {
     "lemma": "doceo",
     "forms": [
+      "docebam",
+      "docebant",
+      "docebat",
       "docemus",
       "docent",
       "doceo",
@@ -1083,6 +1177,9 @@
   {
     "lemma": "duco",
     "forms": [
+      "ducebam",
+      "ducebant",
+      "ducebat",
       "ducere",
       "duceris",
       "ducimini",
@@ -1225,6 +1322,20 @@
     "morphology": "preposition"
   },
   {
+    "lemma": "exemplum",
+    "forms": [
+      "exempli",
+      "exemplo",
+      "exemplum",
+      "exempla",
+      "exemplorum",
+      "exemplis"
+    ],
+    "gloss": "example; model; copy",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "exercitus",
     "forms": [
       "exercitus",
@@ -1263,6 +1374,9 @@
       "faciam",
       "faciant",
       "faciat",
+      "faciebam",
+      "faciebant",
+      "faciebat",
       "facimus",
       "facis",
       "facit",
@@ -1314,21 +1428,35 @@
   {
     "lemma": "fero",
     "forms": [
+      "ferebant",
+      "ferebat",
+      "ferimus",
+      "fero",
+      "ferre",
       "fers",
       "fert",
-      "ferimus",
       "fertis",
       "ferunt",
-      "ferre",
-      "tuli",
       "latum",
-      "fero",
-      "tulit",
-      "tulerunt"
+      "tulerunt",
+      "tuli",
+      "tulit"
     ],
     "gloss": "to carry; bear; bring; endure",
     "confidence": 0.98,
     "morphology": "verb"
+  },
+  {
+    "lemma": "fides",
+    "forms": [
+      "fidei",
+      "fidem",
+      "fide",
+      "fides"
+    ],
+    "gloss": "faith; trust; loyalty; honour",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
   },
   {
     "lemma": "filia",
@@ -1357,6 +1485,40 @@
     "gloss": "son",
     "confidence": 0.98,
     "morphology": "noun masculine"
+  },
+  {
+    "lemma": "finis",
+    "forms": [
+      "finis",
+      "fini",
+      "finem",
+      "fine",
+      "fines",
+      "finium",
+      "finibus"
+    ],
+    "gloss": "end; limit; boundary; purpose",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
+    "lemma": "firmus",
+    "forms": [
+      "firma",
+      "firmum",
+      "firmi",
+      "firmae",
+      "firmo",
+      "firmam",
+      "firmos",
+      "firmas",
+      "firmorum",
+      "firmarum",
+      "firmis"
+    ],
+    "gloss": "firm; strong; steady",
+    "confidence": 0.98,
+    "morphology": "adjective"
   },
   {
     "lemma": "flumen",
@@ -1422,6 +1584,20 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "fortuna",
+    "forms": [
+      "fortunae",
+      "fortunam",
+      "fortuna",
+      "fortunas",
+      "fortunarum",
+      "fortunis"
+    ],
+    "gloss": "fortune; luck; fate",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "forum",
     "forms": [
       "fori",
@@ -1441,6 +1617,8 @@
       "fugere",
       "fugerunt",
       "fugi",
+      "fugiebant",
+      "fugiebat",
       "fugimus",
       "fugis",
       "fugit",
@@ -1453,8 +1631,40 @@
     "morphology": "verb"
   },
   {
+    "lemma": "gaudium",
+    "forms": [
+      "gaudii",
+      "gaudio",
+      "gaudium",
+      "gaudia",
+      "gaudiorum",
+      "gaudiis"
+    ],
+    "gloss": "joy; delight; pleasure",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
+    "lemma": "gens",
+    "forms": [
+      "gentis",
+      "genti",
+      "gentem",
+      "gente",
+      "gentes",
+      "gentium",
+      "gentibus"
+    ],
+    "gloss": "clan; nation; people; race",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "gero",
     "forms": [
+      "gerebam",
+      "gerebant",
+      "gerebat",
       "gerere",
       "gerimus",
       "geris",
@@ -1549,17 +1759,40 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "guberno",
+    "forms": [
+      "gubernas",
+      "gubernat",
+      "gubernabat",
+      "gubernabant",
+      "gubernamus",
+      "gubernatis",
+      "gubernant",
+      "gubernare",
+      "gubernavi",
+      "gubernatum",
+      "guberno"
+    ],
+    "gloss": "to steer; govern; pilot",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
     "lemma": "habeo",
     "forms": [
+      "habebam",
+      "habebant",
+      "habebat",
+      "habemus",
+      "habent",
+      "habeo",
+      "habere",
       "habes",
       "habet",
-      "habemus",
       "habetis",
-      "habent",
-      "habere",
-      "habui",
       "habitum",
-      "habeo"
+      "habui",
+      "habuit"
     ],
     "gloss": "to have; hold",
     "confidence": 0.98,
@@ -1568,6 +1801,9 @@
   {
     "lemma": "habito",
     "forms": [
+      "habitabam",
+      "habitabant",
+      "habitabat",
       "habitamus",
       "habitant",
       "habitare",
@@ -1650,6 +1886,20 @@
     "gloss": "hour; time",
     "confidence": 0.98,
     "morphology": "noun feminine"
+  },
+  {
+    "lemma": "hortus",
+    "forms": [
+      "horti",
+      "horto",
+      "hortum",
+      "hortos",
+      "hortorum",
+      "hortis"
+    ],
+    "gloss": "garden",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
   },
   {
     "lemma": "hostis",
@@ -1831,6 +2081,9 @@
   {
     "lemma": "intro",
     "forms": [
+      "intrabam",
+      "intrabant",
+      "intrabat",
       "intramus",
       "intrant",
       "intrare",
@@ -1855,6 +2108,8 @@
       "inveniam",
       "inveniant",
       "inveniat",
+      "inveniebant",
+      "inveniebat",
       "invenimus",
       "invenire",
       "invenis",
@@ -2024,6 +2279,9 @@
   {
     "lemma": "laboro",
     "forms": [
+      "laborabam",
+      "laborabant",
+      "laborabat",
       "laboramus",
       "laborant",
       "laborare",
@@ -2081,6 +2339,9 @@
   {
     "lemma": "laudo",
     "forms": [
+      "laudabam",
+      "laudabant",
+      "laudabat",
       "laudamus",
       "laudant",
       "laudare",
@@ -2112,8 +2373,8 @@
       "laudium",
       "laudibus"
     ],
-    "gloss": "praise; glory",
-    "confidence": 0.98,
+    "gloss": "praise; glory; honour",
+    "confidence": 0.99,
     "morphology": "noun feminine"
   },
   {
@@ -2139,6 +2400,9 @@
       "lecti",
       "lectum",
       "lectus",
+      "legebam",
+      "legebant",
+      "legebat",
       "legere",
       "legerunt",
       "legi",
@@ -2282,6 +2546,40 @@
     "morphology": "verb"
   },
   {
+    "lemma": "ludo",
+    "forms": [
+      "ludis",
+      "ludit",
+      "ludimus",
+      "luditis",
+      "ludunt",
+      "ludere",
+      "lusi",
+      "lusum",
+      "ludo",
+      "ludebat",
+      "ludebant",
+      "ludebam"
+    ],
+    "gloss": "to play; sport; joke",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "ludus",
+    "forms": [
+      "ludi",
+      "ludo",
+      "ludum",
+      "ludos",
+      "ludorum",
+      "ludis"
+    ],
+    "gloss": "game; play; school; sport",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "luna",
     "forms": [
       "lunae",
@@ -2377,6 +2675,8 @@
   {
     "lemma": "maneo",
     "forms": [
+      "manebant",
+      "manebat",
       "manemus",
       "manent",
       "maneo",
@@ -2525,6 +2825,9 @@
       "missos",
       "missum",
       "missus",
+      "mittebam",
+      "mittebant",
+      "mittebat",
       "mittere",
       "mittimus",
       "mittis",
@@ -2563,6 +2866,9 @@
   {
     "lemma": "moneo",
     "forms": [
+      "monebam",
+      "monebant",
+      "monebat",
       "monemus",
       "monent",
       "moneo",
@@ -2624,6 +2930,21 @@
     "morphology": "noun feminine"
   },
   {
+    "lemma": "mos",
+    "forms": [
+      "moris",
+      "mori",
+      "morem",
+      "more",
+      "mores",
+      "morum",
+      "moribus"
+    ],
+    "gloss": "custom; habit; manner",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "mulier",
     "forms": [
       "mulieris",
@@ -2659,6 +2980,21 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "munus",
+    "forms": [
+      "muneris",
+      "muneri",
+      "munus",
+      "munere",
+      "munera",
+      "munerum",
+      "muneribus"
+    ],
+    "gloss": "duty; gift; public service",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "nam",
     "forms": [
       "nam",
@@ -2671,6 +3007,9 @@
   {
     "lemma": "narro",
     "forms": [
+      "narrabam",
+      "narrabant",
+      "narrabat",
       "narramus",
       "narrant",
       "narrare",
@@ -2718,6 +3057,9 @@
   {
     "lemma": "navigo",
     "forms": [
+      "navigabam",
+      "navigabant",
+      "navigabat",
       "navigamus",
       "navigant",
       "navigare",
@@ -2881,6 +3223,20 @@
     "morphology": "noun feminine"
   },
   {
+    "lemma": "numerus",
+    "forms": [
+      "numeri",
+      "numero",
+      "numerum",
+      "numeros",
+      "numerorum",
+      "numeris"
+    ],
+    "gloss": "number",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "numquam",
     "forms": [
       "numquam",
@@ -2945,6 +3301,39 @@
     "morphology": "verb"
   },
   {
+    "lemma": "offero",
+    "forms": [
+      "offers",
+      "offert",
+      "offerimus",
+      "offertis",
+      "offerunt",
+      "offerre",
+      "obtuli",
+      "oblatum",
+      "offero",
+      "obtulit",
+      "obtulerunt"
+    ],
+    "gloss": "to offer; present; bring forward",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "officium",
+    "forms": [
+      "officii",
+      "officio",
+      "officium",
+      "officia",
+      "officiorum",
+      "officiis"
+    ],
+    "gloss": "duty; service; respect",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "omnis",
     "forms": [
       "omnis",
@@ -2975,6 +3364,39 @@
     "morphology": "noun neuter"
   },
   {
+    "lemma": "oppugno",
+    "forms": [
+      "oppugnas",
+      "oppugnat",
+      "oppugnamus",
+      "oppugnatis",
+      "oppugnant",
+      "oppugnare",
+      "oppugnavi",
+      "oppugnatum",
+      "oppugno",
+      "oppugnavit"
+    ],
+    "gloss": "to attack; assault; besiege",
+    "confidence": 0.98,
+    "morphology": "verb"
+  },
+  {
+    "lemma": "opus",
+    "forms": [
+      "operis",
+      "operi",
+      "opus",
+      "opere",
+      "opera",
+      "operum",
+      "operibus"
+    ],
+    "gloss": "work; task; deed; need",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "oratio",
     "forms": [
       "orationis",
@@ -2988,6 +3410,21 @@
     "gloss": "speech; oration",
     "confidence": 0.98,
     "morphology": "noun feminine"
+  },
+  {
+    "lemma": "ordo",
+    "forms": [
+      "ordinis",
+      "ordini",
+      "ordinem",
+      "ordine",
+      "ordines",
+      "ordinum",
+      "ordinibus"
+    ],
+    "gloss": "order; rank; row; class",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
   },
   {
     "lemma": "ostendo",
@@ -3157,8 +3594,8 @@
       "periculorum",
       "periculis"
     ],
-    "gloss": "danger; risk",
-    "confidence": 0.98,
+    "gloss": "danger; risk; trial",
+    "confidence": 0.99,
     "morphology": "noun neuter"
   },
   {
@@ -3182,6 +3619,9 @@
   {
     "lemma": "peto",
     "forms": [
+      "petebam",
+      "petebant",
+      "petebat",
       "petere",
       "petimus",
       "petis",
@@ -3229,6 +3669,9 @@
   {
     "lemma": "pono",
     "forms": [
+      "ponebam",
+      "ponebant",
+      "ponebat",
       "ponere",
       "ponimus",
       "ponis",
@@ -3296,6 +3739,9 @@
   {
     "lemma": "porto",
     "forms": [
+      "portabam",
+      "portabant",
+      "portabat",
       "portamus",
       "portant",
       "portare",
@@ -3313,17 +3759,33 @@
     "morphology": "verb"
   },
   {
+    "lemma": "portus",
+    "forms": [
+      "portus",
+      "portui",
+      "portum",
+      "portu",
+      "portuum",
+      "portibus"
+    ],
+    "gloss": "harbour; port",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "possum",
     "forms": [
+      "posse",
+      "possum",
+      "possumus",
+      "possunt",
+      "poteram",
+      "poterant",
+      "poterat",
       "potes",
       "potest",
-      "possumus",
       "potestis",
-      "possunt",
-      "posse",
-      "potui",
-      "possum",
-      "potest"
+      "potui"
     ],
     "gloss": "to be able; can",
     "confidence": 0.98,
@@ -3347,6 +3809,21 @@
     "gloss": "first; at first",
     "confidence": 0.98,
     "morphology": "adverb"
+  },
+  {
+    "lemma": "princeps",
+    "forms": [
+      "principis",
+      "principi",
+      "principem",
+      "principe",
+      "principes",
+      "principum",
+      "principibus"
+    ],
+    "gloss": "chief; leader; first citizen; prince",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
   },
   {
     "lemma": "pro",
@@ -3426,6 +3903,9 @@
   {
     "lemma": "pugno",
     "forms": [
+      "pugnabam",
+      "pugnabant",
+      "pugnabat",
       "pugnamus",
       "pugnant",
       "pugnare",
@@ -3570,8 +4050,25 @@
     "morphology": "verb"
   },
   {
+    "lemma": "ratio",
+    "forms": [
+      "rationis",
+      "rationi",
+      "rationem",
+      "ratione",
+      "rationes",
+      "rationum",
+      "rationibus"
+    ],
+    "gloss": "reason; account; method; plan",
+    "confidence": 0.98,
+    "morphology": "noun feminine"
+  },
+  {
     "lemma": "regno",
     "forms": [
+      "regnabant",
+      "regnabat",
       "regnamus",
       "regnant",
       "regnare",
@@ -3605,6 +4102,9 @@
     "lemma": "rego",
     "forms": [
       "rectum",
+      "regebam",
+      "regebant",
+      "regebat",
       "regere",
       "regimus",
       "regis",
@@ -3660,6 +4160,8 @@
   {
     "lemma": "respondeo",
     "forms": [
+      "respondebant",
+      "respondebat",
       "respondemus",
       "respondent",
       "respondeo",
@@ -3744,6 +4246,35 @@
     "morphology": "adjective"
   },
   {
+    "lemma": "sacerdos",
+    "forms": [
+      "sacerdotis",
+      "sacerdoti",
+      "sacerdotem",
+      "sacerdote",
+      "sacerdotes",
+      "sacerdotum",
+      "sacerdotibus"
+    ],
+    "gloss": "priest; priestess",
+    "confidence": 0.98,
+    "morphology": "noun masculine/feminine"
+  },
+  {
+    "lemma": "sacrificium",
+    "forms": [
+      "sacrificii",
+      "sacrificio",
+      "sacrificium",
+      "sacrificia",
+      "sacrificiorum",
+      "sacrificiis"
+    ],
+    "gloss": "sacrifice; offering",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "saepe",
     "forms": [
       "saepe"
@@ -3813,6 +4344,9 @@
   {
     "lemma": "scribo",
     "forms": [
+      "scribebam",
+      "scribebant",
+      "scribebat",
       "scribere",
       "scribimus",
       "scribis",
@@ -3857,6 +4391,7 @@
   {
     "lemma": "sedeo",
     "forms": [
+      "sedebam",
       "sedebant",
       "sedebat",
       "sedemus",
@@ -3916,16 +4451,18 @@
   {
     "lemma": "sentio",
     "forms": [
+      "sensi",
+      "sensit",
+      "sensum",
+      "sentiebant",
+      "sentiebat",
+      "sentimus",
+      "sentio",
+      "sentire",
       "sentis",
       "sentit",
-      "sentimus",
       "sentitis",
-      "sentiunt",
-      "sentire",
-      "sensi",
-      "sensum",
-      "sentio",
-      "sensit"
+      "sentiunt"
     ],
     "gloss": "to feel; perceive; think",
     "confidence": 0.98,
@@ -3934,6 +4471,9 @@
   {
     "lemma": "servo",
     "forms": [
+      "servabam",
+      "servabant",
+      "servabat",
       "servamus",
       "servant",
       "servare",
@@ -4034,6 +4574,20 @@
     "morphology": "preposition"
   },
   {
+    "lemma": "socius",
+    "forms": [
+      "socii",
+      "socio",
+      "socium",
+      "socios",
+      "sociorum",
+      "sociis"
+    ],
+    "gloss": "ally; partner; companion",
+    "confidence": 0.98,
+    "morphology": "noun masculine"
+  },
+  {
     "lemma": "sol",
     "forms": [
       "solis",
@@ -4084,6 +4638,9 @@
   {
     "lemma": "spero",
     "forms": [
+      "sperabam",
+      "sperabant",
+      "sperabat",
       "speramus",
       "sperant",
       "sperare",
@@ -4153,19 +4710,21 @@
   {
     "lemma": "sum",
     "forms": [
-      "sum",
+      "eram",
+      "eramus",
+      "erant",
+      "erat",
+      "eratis",
       "es",
-      "est",
-      "sumus",
-      "estis",
-      "sunt",
       "esse",
-      "fui",
+      "est",
+      "estis",
       "fueram",
       "fuerit",
-      "eram",
-      "erat",
-      "erant"
+      "fui",
+      "sum",
+      "sumus",
+      "sunt"
     ],
     "gloss": "to be",
     "confidence": 0.98,
@@ -4249,6 +4808,9 @@
   {
     "lemma": "teneo",
     "forms": [
+      "tenebam",
+      "tenebant",
+      "tenebat",
       "tenemus",
       "tenent",
       "teneo",
@@ -4282,14 +4844,17 @@
   {
     "lemma": "timeo",
     "forms": [
+      "timebam",
+      "timebant",
+      "timebat",
+      "timemus",
+      "timent",
+      "timeo",
+      "timere",
       "times",
       "timet",
-      "timemus",
       "timetis",
-      "timent",
-      "timere",
-      "timui",
-      "timeo"
+      "timui"
     ],
     "gloss": "to fear; be afraid",
     "confidence": 0.98,
@@ -4332,6 +4897,8 @@
   {
     "lemma": "trado",
     "forms": [
+      "tradebant",
+      "tradebat",
       "tradere",
       "tradiderunt",
       "tradidi",
@@ -4459,6 +5026,9 @@
     "forms": [
       "venerunt",
       "veni",
+      "veniebam",
+      "veniebant",
+      "veniebat",
       "venimus",
       "venio",
       "venire",
@@ -4573,6 +5143,9 @@
     "lemma": "video",
     "forms": [
       "vide",
+      "videbam",
+      "videbant",
+      "videbat",
       "videmus",
       "vident",
       "video",
@@ -4679,6 +5252,8 @@
     "lemma": "vivo",
     "forms": [
       "victum",
+      "vivebant",
+      "vivebat",
       "vivere",
       "vivimus",
       "vivis",
@@ -4697,6 +5272,9 @@
   {
     "lemma": "voco",
     "forms": [
+      "vocabam",
+      "vocabant",
+      "vocabat",
       "vocamus",
       "vocant",
       "vocare",
@@ -4745,8 +5323,24 @@
     "morphology": "pronoun"
   },
   {
+    "lemma": "votum",
+    "forms": [
+      "voti",
+      "voto",
+      "votum",
+      "vota",
+      "votorum",
+      "votis"
+    ],
+    "gloss": "vow; prayer; wish",
+    "confidence": 0.98,
+    "morphology": "noun neuter"
+  },
+  {
     "lemma": "vulnero",
     "forms": [
+      "vulnerabant",
+      "vulnerabat",
       "vulneramus",
       "vulnerant",
       "vulnerare",
