@@ -1,0 +1,3 @@
+[submodule "vendor/lexica"]
+	path = vendor/lexica
+	url = https://github.com/PerseusDL/lexica.git

@@ -43,6 +43,9 @@ def _optional_path(env_name: str) -> Path | None:
 
 
 _LEWIS_SHORT_CANDIDATES = (
+    # Submodule path (preferred — vendored with the repo)
+    Path(__file__).parents[2] / "vendor/lexica/CTS_XML_TEI/perseus/pdllex/lat/ls/lat.ls.perseus-eng2.xml",
+    # Legacy user-level clone
     Path.home() / "repos/lexica/CTS_XML_TEI/perseus/pdllex/lat/ls/lat.ls.perseus-eng2.xml",
 )
 
