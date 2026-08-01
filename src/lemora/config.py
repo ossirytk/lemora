@@ -17,6 +17,7 @@ class LemoraConfig:
     whitaker_path: Path | None
     lewis_short_path: Path | None
     model_path: Path | None
+    vulgate_memory_path: Path | None
 
     @classmethod
     def from_env(cls) -> LemoraConfig:
@@ -27,11 +28,13 @@ class LemoraConfig:
         whitaker_path = _optional_path("LEMORA_WHITAKER_PATH")
         lewis_short_path = _optional_path("LEMORA_LEWIS_SHORT_PATH") or _default_lewis_short_path()
         model_path = _optional_path("LEMORA_MODEL_PATH")
+        vulgate_memory_path = _optional_path("LEMORA_VULGATE_MEMORY_PATH") or (data_dir / "vulgate-memory.json")
         return cls(
             data_dir=data_dir,
             whitaker_path=whitaker_path,
             lewis_short_path=lewis_short_path,
             model_path=model_path,
+            vulgate_memory_path=vulgate_memory_path,
         )
 
 

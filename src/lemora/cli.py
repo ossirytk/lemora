@@ -11,6 +11,7 @@ from lemora.adapters.lewis_short import LewisShortAdapter
 from lemora.adapters.national_archives_reference import NationalArchivesReferenceAdapter
 from lemora.adapters.whitaker import WhitakerAdapter
 from lemora.config import LemoraConfig
+from lemora.memory.vulgate_memory import VulgateMemoryIndex
 from lemora.llm.llama_synth import LlamaSynthesizer
 from lemora.nlp.cltk_analyzer import CltkAnalyzer
 from lemora.renderer import render_result
@@ -64,6 +65,7 @@ def run(argv: Sequence[str] | None = None) -> int:
         analyzer=CltkAnalyzer(),
         synthesizer=LlamaSynthesizer(config.model_path),
     )
+    VulgateMemoryIndex(config.vulgate_memory_path).ensure_parent_directory()
     result = service.translate(query=args.query, synthesize=args.synthesize)
 
     console = Console()
