@@ -17,6 +17,7 @@ class LemoraConfig:
     whitaker_path: Path | None
     lewis_short_path: Path | None
     model_path: Path | None
+    vulgate_memory_path: Path | None
 
     @classmethod
     def from_env(cls) -> LemoraConfig:
@@ -25,13 +26,15 @@ class LemoraConfig:
             os.getenv("LEMORA_DATA_DIR", user_data_dir(appname="lemora", appauthor=False)),
         )
         whitaker_path = _optional_path("LEMORA_WHITAKER_PATH")
-        lewis_short_path = _optional_path("LEMORA_LEWIS_SHORT_PATH")
+        lewis_short_path = _optional_path("LEMORA_LEWIS_SHORT_PATH") or _default_lewis_short_path()
         model_path = _optional_path("LEMORA_MODEL_PATH")
+        vulgate_memory_path = _optional_path("LEMORA_VULGATE_MEMORY_PATH") or (data_dir / "vulgate-memory.json")
         return cls(
             data_dir=data_dir,
             whitaker_path=whitaker_path,
             lewis_short_path=lewis_short_path,
             model_path=model_path,
+            vulgate_memory_path=vulgate_memory_path,
         )
 
 
@@ -40,3 +43,18 @@ def _optional_path(env_name: str) -> Path | None:
     if raw_value is None or raw_value.strip() == "":
         return None
     return Path(raw_value).expanduser()
+
+
+_LEWIS_SHORT_CANDIDATES = (
+    # Submodule path (preferred — vendored with the repo)
+    Path(__file__).parents[2] / "vendor/lexica/CTS_XML_TEI/perseus/pdllex/lat/ls/lat.ls.perseus-eng2.xml",
+    # Legacy user-level clone
+    Path.home() / "repos/lexica/CTS_XML_TEI/perseus/pdllex/lat/ls/lat.ls.perseus-eng2.xml",
+)
+
+
+def _default_lewis_short_path() -> Path | None:
+    for candidate in _LEWIS_SHORT_CANDIDATES:
+        if candidate.exists():
+            return candidate
+    return None

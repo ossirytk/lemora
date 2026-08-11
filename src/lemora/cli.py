@@ -8,8 +8,10 @@ from typing import TYPE_CHECKING
 from rich.console import Console
 
 from lemora.adapters.lewis_short import LewisShortAdapter
+from lemora.adapters.national_archives_reference import NationalArchivesReferenceAdapter
 from lemora.adapters.whitaker import WhitakerAdapter
 from lemora.config import LemoraConfig
+from lemora.memory.vulgate_memory import VulgateMemoryIndex
 from lemora.llm.llama_synth import LlamaSynthesizer
 from lemora.nlp.cltk_analyzer import CltkAnalyzer
 from lemora.renderer import render_result
@@ -51,11 +53,19 @@ def run(argv: Sequence[str] | None = None) -> int:
         return 1
 
     config = LemoraConfig.from_env()
+    dictionaries = [
+        LewisShortAdapter(config.lewis_short_path),
+        NationalArchivesReferenceAdapter(),
+    ]
+    if config.whitaker_path is not None:
+        dictionaries.append(WhitakerAdapter(config.whitaker_path))
+
     service = LemoraService(
-        dictionaries=[WhitakerAdapter(), LewisShortAdapter()],
+        dictionaries=dictionaries,
         analyzer=CltkAnalyzer(),
         synthesizer=LlamaSynthesizer(config.model_path),
     )
+    VulgateMemoryIndex(config.vulgate_memory_path).ensure_parent_directory()
     result = service.translate(query=args.query, synthesize=args.synthesize)
 
     console = Console()

@@ -1,0 +1,2 @@
+"""Bundled static language resources."""
+

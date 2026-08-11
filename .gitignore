@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw source data from Project Gutenberg (public domain, not committed)
+/resources/
